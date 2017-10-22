@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Table of Contents</title>
+</head>
+
+<body>
+    <h1>Ten Findings</h1>
+    <ol>
+        <li>&ltbdi&gt tag - not compatible with all browsers.</li>
+        <li>The &ltnoscript&gt element is a blunt instrument. Sometimes, scripts might be enabled, but 
+            for some reason the page's script might fail. For this reason, it's generally better 
+            to avoid using noscript, and to instead design the script to change the page from 
+            being a scriptless page to a scripted page on the fly.</li>
+        <li>&ltnoscript&gt is not supported in the XHTML syntax.</li>
+        <li>&ltiframe&gt - Setting both the allow-scripts and allow-same-origin keywords together when 
+            the embedded page has the same origin as the page containing the iframe allows the 
+            embedded page to simply remove the sandbox attribute and then reload itself, 
+            effectively breaking out of the sandbox altogether.</li>
+        <li>&lttrack&gt tags don't seem to work when testing locally. Thye only work when run on a server.</li>
+        <li>onmousewheel event does not seem to exist. HTML would not recognize it and I could not find any proper documentation on it.</li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+</body>
+</html>
