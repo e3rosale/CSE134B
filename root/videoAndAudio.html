@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Video and Audio Content</title>
+
+	<script>
+		 function failed(e) {
+		   switch (e.target.error.code) {
+		     case e.target.error.MEDIA_ERR_ABORTED:
+		       alert('You aborted the video playback.');
+		       break;
+		     case e.target.error.MEDIA_ERR_NETWORK:
+		       alert('A network error caused the video download to fail part-way.');
+		       break;
+		     case e.target.error.MEDIA_ERR_DECODE:
+		       alert('The video playback was aborted due to a corruption problem or because the video used features your browser did not support.');
+		       break;
+		     case e.target.error.MEDIA_ERR_SRC_NOT_SUPPORTED:
+		       alert('The video could not be loaded, either because the server or network failed or because the format is not supported.');
+		       break;
+		     default:
+		       alert('An unknown error occurred.');
+		       break;
+		   }
+		 }
+ 	</script>
+</head>
+<body>
+	<h1>Welcome to soccer city!</h1>
+	<audio src="crowd.mp3" preload autoplay></audio>
+	<p>Watch the video our listen to the audio bellow once current audio stops playing!</p>
+	<br><br>
+
+	<h3>Watch one of the best NIKE soccer comercials ever!</h3>
+	<video  autoplay muted controls loop height="400" width="700">
+		<source src='nike.mp4' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' onerror="failed(event)">
+		<track kind="captions" src="captions.vtt" srclang="en">
+	</video>
+	<p><a href="nike.mp4">Download now!</a></p>
+	<br><br>
+
+	<h3>Listen to the crowd when their team misses a clear chance to score!</h3>
+	<audio src="missed_goal.mp3" loop controls muted></audio>
+
+	
+</body>
+</html>

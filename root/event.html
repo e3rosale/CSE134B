@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Event Attributes</title>
+	<script type="text/javascript">
+		function change(e) {
+			alert('onchange() fired!');
+		}
+
+		function submit2() {
+			alert('onSubmit() fired!')
+		}
+
+		function err() {
+			console.log('onerror() fired!');
+		}
+
+		function focus2(e) {
+			console.log('onfocus() fired!');
+
+		}
+
+		function blur2(e) {
+			console.log('onblur() fired!');
+		}
+
+		function clk() {
+			alert('onclick() fired!');
+		}
+
+		function dbclk() {
+			alert('ondbclick() fired!');
+		}
+
+		function inp() {
+			console.log('oninput() fired!');
+		}
+
+		function inval() {
+			alert('oninvalid() fired! you must enter a team name!')
+		}
+
+		function keyDown() {
+			console.log('onkeydown() fired!');
+		}
+
+		function keyPress() {
+			console.log('onkeypress() fired!');
+		}
+
+		function keyUp() {
+			console.log('onkeyup() fired!');
+		}
+
+		function mouseDown() {
+			alert('onmousdown() fired!');
+		}
+
+		function mouseEnter() {
+			alert('onmouseenter() fired!');
+		}
+
+		function mouseLeave() {
+			alert('onmouseleave() fired!');
+		}
+
+		function mouseMove() {
+			console.log('onmousemove() fired!');
+		}
+
+		function mouseOut() {
+			alert('onmouseout() fired! mouse leaving FIFA logo');
+		}
+
+		function mouseOver() {
+			console.log('onmouseover() fired!');
+		}
+
+		// onmousewheel does not seem to be supported by html5. I tried to look up for info but I could not find any reference
+
+		function reset2() {
+			alert('onreset() fired!');
+		}
+
+		function scrl() {
+			console.log('onscroll() fired!');
+		}
+
+		function slct() {
+			console.log('onselect() fired!');
+		}
+
+		function ld() {
+			alert('onload() fired! website has been loaded!');
+		}
+	</script>
+</head>
+<body onload="ld()">
+<h2>Fill out the form and other components to fire events</h2>
+	<p><img src="nonexistingPic.jpg" onerror="err()" alt="soccer ball image"></p>
+
+	<form onchange="change(event)" onsubmit="return submit2()" onreset="reset2()">
+		<label>Enter name: <input id="fname" type="text" name="name" onfocus="focus2(this.id)" onblur="blur2(this.id)"> </label> 
+		<label>Enter team: <input id="tname" type="text" name="team" required oninvalid="inval()" onmouseover="mouseOver()"> </label>
+		<label>Enter email: <input type="email" name="email" onmousedown="mouseDown()" onmouseleave="mouseLeave()"></label>
+
+		<p>Select a desired poistion:</p>
+		<ul>
+			<li><label><input type=checkbox name=forward> Forward</label></li>
+			<li><label><input type=checkbox name=midfielder> Midfielder</label></li>
+			<li><label><input type=checkbox name=defense> Defense</label></li>
+			<li><label><input type=checkbox name=goalkeeper> Goal Keeper</label></li>
+		</ul>
+		
+		<label>Additional Comments: <small>(onscroll() tested here, just make the text area big enough)</small></label><br>
+		<textarea rows="5" cols="50" oninput="inp()" onscroll="scrl()" onselect="slct()"></textarea>
+		<br><br>
+
+		<label>Initials: <input type="text" name="initials" onkeydown="keyDown()" onkeypress="keyPress()" onkeyup="keyUp()" onmouseenter="mouseEnter()"></label>
+		<br><br>
+
+		<input type="submit" name="submit" value="Submit">
+		<input type="reset" name="reset" value="Reset">
+		<button type="button" onclick="clk()">Click Me!</button> 
+		<button type="button" ondblclick="dbclk()">Double click me!</button>
+	</form>
+	<br><br>
+
+	<img src="fifa.jpg" alt="FIFA logo" width="500" height="300" onmousemove="mouseMove()" onmouseout="mouseOut()">
+</body>
+</html>

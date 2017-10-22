@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Script</title>
+</head>
+<body onload="draw()">
+	<!-- For all script tags I am also creating a pair of noscript tags -->
+	<h3>The script and noscript Tags</h3>
+		<script>
+ 			function calculate(form) {
+	   			var price = 500;
+	  			if (form.elements.cleats.checked)
+	    			price += 100;
+	   			if (form.elements.jersey.checked)
+	    			price += 70;
+	   			if (form.elements.shortsAndSocks.checked)
+	    			price += 50;
+	   			if (form.elements.ball.checked)
+	    			price += 50;
+	   			form.elements.result.value = price;
+	 		}
+		</script>
+		<form name="pricecalc" onsubmit="return false" onchange="calculate(this)">
+	 		<fieldset>
+	  			<legend>Calculate the total price to sign up your child to kids FC, the best soccer team for kids!</legend>
+	  			<p>Initial<small>(One time only!)</small> cost: 500$.</p>
+	  			<p>Select additional options:</p>
+	  			<ul>
+	   				<li><label><input type=checkbox name=cleats> Soccer cleats (100$)</label></li>
+	   				<li><label><input type=checkbox name=jersey> Soccer Jersey (70$)</label></li>
+	   				<li><label><input type=checkbox name=shortsAndSocks> Soccer shorts and socks (50$)</label></li>
+	   				<li><label><input type=checkbox name=ball> Soccer ball (50$)</label></li>
+	  			</ul>
+	  			<p>Total: <output name=result>$</output></p>
+	 		</fieldset>
+	 		<script>
+	  			calculate(document.forms.pricecalc);
+	 		</script>
+	 		<noscript style="color: red;">Price can't be calculated. Your browser does not suppor JavaScript!</noscript>
+		</form>
+	<br>
+	
+	<h3>The template Tag</h3>
+	<script>
+ 		var dreamTeam = [ { name: 'Gianluigi Buffon',   club: 'Juventus',      country: 'Italy',     jersey: 1 },
+   					      { name: 'Dani Alves',         club: 'PSG',           country: 'Brazil',    jersey: 2 },
+   					      { name: 'Sergio Ramos',       club: 'Real Madrir',   country: 'Spain',     jersey: 4 },
+   					      { name: 'Jerome Boateng',     club: 'Bayern Munich', country: 'Germany',   jersey: 17 },
+   					      { name: 'Marcelo',            club: 'Real Madrid',   country: 'Brazil',    jersey: 12 },
+   					      { name: 'Andres Iniesta',     club: 'Barcelona',     country: 'Spain',     jersey: 8 },
+   					      { name: 'Angel Di Maria',     club: 'PSG',           country: 'Argentina', jersey: 17 },
+   					      { name: 'Luka Modric',        club: 'Real Madrid',   country: 'Croatia',   jersey: 14 },
+   					      { name: 'Lionel Messi',       club: 'Barcelona',     country: 'Argentina', jersey: 10 },
+   					      { name: 'Neymar Jr.',         club: 'PSG',           country: 'Brazil',    jersey: 11 },
+   					      { name: 'Cristiano Ronaldo',  club: 'Real Madrid',   country: 'Portugal',  jersey: 7 }];
+	</script>
+	<h4>Dream Team:</h4>
+	<table>
+ 		<thead>
+  			<tr>
+   				<th>Name <th>Current Club <th>Country of Origin <th>Jersey Number
+ 			<tbody>
+  			<template id="row">
+   				<tr><td><td><td><td>
+  			</template>
+	</table>
+	<script>
+ 		var template = document.querySelector('#row');
+ 		for (var i = 0; i < dreamTeam.length; i += 1) {
+   			var player = dreamTeam[i];
+  	 		var clone = template.content.cloneNode(true);
+   			var cells = clone.querySelectorAll('td');
+   			cells[0].textContent = player.name;
+   			cells[1].textContent = player.club;
+   			cells[2].textContent = player.country;
+   			cells[3].textContent = player.jersey;
+   			template.parentNode.appendChild(clone);
+ 		}
+	</script>
+	<noscript style="color: red;">List could not be displayed. Your browser does not support JavaScript!</noscript>
+	<br>
+	<h3>The canvas Tag</h3>
+
+	<script type="text/javascript">
+		function draw() {
+			var canvas = document.getElementById('canvas');
+			if(canvas.getContext) {
+				var ctx = canvas.getContext('2d');
+
+				ctx.beginPath();
+    			ctx.arc(150, 90, 50, 0, Math.PI * 2, true); // Outer circle
+    			ctx.moveTo(140, 90);
+          		ctx.lineTo(140, 40);
+          		ctx.lineTo(140, 140);
+          		ctx.moveTo(160, 100);
+          		ctx.lineTo(160, 40);
+          		ctx.lineTo(160, 140);
+    			ctx.stroke();
+			}
+		}
+	</script>
+	<noscript style="color: red;">The soccer ball not be displayed. Your browser does not support JavaScript!</noscript>
+
+	<h4>Old school soccer ball!</h4>
+	<canvas id="canvas" height="200" width="300" style="background: #03FAFD; border: 2px solid black;"></canvas>
+</body>
+</html>
