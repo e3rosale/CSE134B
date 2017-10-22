@@ -18,9 +18,11 @@
             the embedded page has the same origin as the page containing the iframe allows the 
             embedded page to simply remove the sandbox attribute and then reload itself, 
             effectively breaking out of the sandbox altogether.</li>
-        <li>&lttrack&gt tags don't seem to work when testing locally. Thye only work when run on a server.</li>
+        <li>&lttrack&gt tags don't seem to work when testing locally. It only works when run on a server.</li>
         <li>onmousewheel event does not seem to exist. HTML would not recognize it and I could not find any proper documentation on it.</li>
-        <li></li>
+        <li>&ltiframe&gt tag works fine locally, I can set the sandbox attribute and I am able to see the the embedded window inside the main window. The
+            problem arises when the website is being hosted on the server. the &ltiframe&gt tag does not seem to work and display its content. I am assuming the 
+            browsers have some kind of security to prevent the tag from running.</li>
         <li></li>
         <li></li>
         <li></li>
