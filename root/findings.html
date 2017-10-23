@@ -12,23 +12,29 @@
     <h1>Ten Findings</h1>
     <ol>
         <li>&lt;bdi&gt; tag - not compatible with all browsers.</li>
-        <li>The &lt;noscript&gt; element is a blunt instrument. Sometimes, scripts might be enabled, but 
-            for some reason the page's script might fail. For this reason, it's generally better 
+        <li>The &lt;noscript&gt; element is a blunt instrument. Sometimes, scripts might be enabled, but
+            for some reason the page's script might fail. For this reason, it's generally better
             to avoid using noscript, and to instead design the script to change the page from 
             being a scriptless page to a scripted page on the fly.</li>
         <li>&lt;noscript&gt; is not supported in the XHTML syntax.</li>
-        <li>&lt;iframe&gt; - Setting both the allow-scripts and allow-same-origin keywords together when 
-            the embedded page has the same origin as the page containing the iframe allows the 
-            embedded page to simply remove the sandbox attribute and then reload itself, 
+        <li>&lt;iframe&gt; - Setting both the allow-scripts and allow-same-origin keywords together when
+            the embedded page has the same origin as the page containing the iframe allows the
+            embedded page to simply remove the sandbox attribute and then reload itself,
             effectively breaking out of the sandbox altogether.</li>
         <li>&lt;track&gt; tags don't seem to work when testing locally. It only works when run on a server.</li>
         <li>onmousewheel event does not seem to exist. HTML would not recognize it and I could not find any proper documentation on it.</li>
         <li>&lt;iframe&gt; tag works fine locally, I can set the sandbox attribute and I am able to see the the embedded window inside the main window. The
-            problem arises when the website is being hosted on the server. the &lt;iframe&gt; tag does not seem to work and display its content. I am assuming the 
+            problem arises when the website is being hosted on the server. the &lt;iframe&gt; tag does not seem to work and display its content. I am assuming the
             browsers have some kind of security to prevent the tag from running.</li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>&lt;date&gt; For the element input of type date, the element works well locally, and the Google Chrome web browser renders the page correctly, but
+        	  issue lies with other web browsers (User Agents). W3C Validation raised the warning that this type is not supported in all web browsers.
+        </li>
+				<li>&lt;time&gt; For the element input of type time, the element works well locally, and the Google Chrome web browser renders the page correctly, but
+        	  issue lies with other web browsers (User Agents). W3C Validation raised the warning that this type is not supported in all web browsers.
+        </li>
+				<li>&lt;color&gt; For the element input of type color, the element works well locally, and the Google Chrome web browser renders the page correctly, but
+        	  issue lies with other web browsers (User Agents). W3C Validation raised the warning that this type is not supported in all web browsers.
+        </li>
     </ol>
 </body>
 </html>
