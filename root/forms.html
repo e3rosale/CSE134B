@@ -5,6 +5,95 @@
   <title>Example Demo For Forms Elements</title>
 </head>
 <body>
+  <h1>Example of the form, label, and input elements</h1>
 
+  <p>Click on one of the text labels to toggle the related control:</p>
+  <form action="/action_page.php">
+    <label for="messi">Lionel Messi</label>
+    <input type="radio" name="messi" id="messi" value="messi"><br>
+    <label for="cristiano">Cristiano Ronaldo</label>
+    <input type="radio" name="cristiano" id="cristiano" value="cristiano"><br>
+    <label for="neymar">Neymar</label>
+    <input type="radio" name="neymar" id="neymar" value="neymar"><br><br>
+    <input type="submit" value="Vote">
+  </form>
+
+  <h1>Example for the type hidden, text, search, tel, email, password, date, time, number</h1>
+  <form action="/action_page.php">
+    <label for="first_name"> First Name:</label>
+    <input type="text" name="first_name" id="first_name"><br>
+    <label for="last_name">Last Name: </label>
+    <input type="text" name="last_name" id="last_name"><br>
+    <label for="player_search">Search for your favorite footballer: </label>
+    <input type="search" name="player_search" id="player_search"><br>
+    <label for="email">User Email: </label>
+    <input type="email" name="user_email" id="email"><br>
+    <label for="password">User Password: </label>
+    <input type="password" name="user_password" id="password"><br>
+    <label for="date">Please enter the date for today: </label>
+    <input type="date" name="date" id="date"><br>
+    <lavel for="time">Please enter the current time: </label>
+    <input type="time" name="time" id="time"><br>
+    <input type="submit" value="enter">
+  </form>
+
+  <h1>Example for the type range, color, checkbox, radio, file, submit, reset, button</h1>
+  <form>
+    <label for="color"> Please select your favorite color: </label>
+    <input type="color" name="user_color" id="color"><br>
+    <label for="range">Please rate your level of tiredness: </label>
+    <input type="range" name="user_tiredness" id="range"><br>
+
+    <p>TODO List for today</p>
+    <input type="checkbox" name="did_laundry" id="laundry">
+    <label for="laundry">Finished Laundry<label><br>
+    <input type="checkbox" name="did_homework" id="homework">
+    <label for="homework">Completed Homework<label><br>
+    <input type="checkbox" name="went_grocery_shopping" id="grocery">
+    <label for="grocery">Went Grocery Shopping<label><br><br>
+    <label for="file_upload">Select a file: </label>
+    <input type="file" name="img" id="file_upload"><br>
+
+    <br><br>
+    <p>Select all pizza toppings for your order: </p>
+    <label ="pepperoni">Pepperoni: </label>
+    <input type="radio" value="Pepperoni" id="pepperoni">
+    <label ="pineapple">Pineapple: </label>
+    <input type="radio" value="Pineapple" id="pineapple">
+    <label ="sausage">Sausage: </label>
+    <input type="radio" value="Sausage" id="sausage">
+    <label ="bell_pepper">Bell Peppers: </label>
+    <input type="radio" value="Bell Peppers" id="bell_pepper">
+    <label ="onions">Onions: </label>
+    <input type="radio" value="Onions" id="onions">
+    <label ="salami">Salami: </label>
+    <input type="radio" value="Salami" id="salami">
+    <label ="ham">Ham: </label>
+    <input type="radio" value="Ham" id="ham">
+    <label ="chicken">Chicken: </label>
+    <input type="radio" value="Chicken" id="chicken">
+    <br><br><br>
+
+    <label for="button">Click on the button of type button to win tickets for The UEFA Champions League Final: </label>
+    <input type="button" name="user_button" value="click here to win tickets for Champions League Final" id="button"><br>
+
+    <label for="clear">Click here to reset the form fields for this section: </label>
+    <input type="reset" name="reset" value="clear" id="clear"><br>
+
+    <input type="submit" value="submit">
+  </form>
+
+  <h1>Example for the select element</h1>
+  <form action="/action_page.php">
+    <p>Which team won the Champions League last year?</p>
+    <select name="teams">
+      <option value="paris_saint_germain">Paris Saint Germain</option>
+      <option value="barcelona">Barcelona</option>
+      <option value="real_madrid">Real Madrid</option>
+      <option value="manchester_united">Manchester United</option>
+    </select>
+    <br><br>
+    <input type="submit">
+  </form>
 </body>
 </html>
