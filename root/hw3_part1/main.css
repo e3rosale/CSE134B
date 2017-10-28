@@ -1,0 +1,169 @@
+/* Hint: use relative measurements you'll find them useful! */
+/* I may have removed a selector or two */
+
+@import url('https://fonts.googleapis.com/css?family=Monoton');
+* {box-sizing: border-box;}
+html, body {width: 100%; height: 100%; margin: 0; padding: 0;}
+body, main, header, main > header, main > section, main > footer, .logo {flex-shrink: 0}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(background.png);
+  background-attachment: fixed;
+}
+#spritesheet {z-index: 0; position: absolute;}
+svg[title^="bugs"] {
+  fill: white;
+  margin: 0 1%;
+  height: 2rem;
+  width: 10%;
+}
+svg {transition: all 5s;}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 3em 0;
+  padding: 1em;
+  border: 1em solid;
+  border-image-source: url(border.gif);
+  border-image-slice: 30;
+  background-color: white;
+  z-index: 999;
+}
+header {width: 80%;}
+header > .wrapper {display: flex; width: 80%;}
+.logo {
+  margin-right: auto;
+  width: 3em;
+  line-height: 2em;
+  font-family: 'Monoton', cursive;
+  color: black;
+  font-size: 3rem;
+  text-decoration: none;
+  text-align: center;
+  background-color: #e570c4;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0.2rem 0.5rem 0 rgba(0,0,0,0.9);
+  -moz-box-shadow: 0 0.2rem 0.5rem 0 rgba(0,0,0,0.9);
+  box-shadow: 0 0.2rem 0.5rem 0 rgba(0,0,0,0.9);
+}
+.fun {margin: 0; padding: 0}
+.fun, .fun * {
+  font-family: 'Courier', 'Courier New', serif;
+  text-transform: uppercase;
+  color: white;
+  -webkit-text-stroke: 0.1rem rgb(255,63,63);
+  text-shadow: 0 0.2rem rgb(255,63,63);
+}
+#kern1 {letter-spacing: -1rem; margin-left: -0.7rem;}
+#kern3 {letter-spacing: -0.7rem;}
+section {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  margin-top: 2em;
+  font-family: "Comic Sans MS";
+  text-transform: lowercase;
+  color: white;
+  align-items: center;
+}
+section > div {padding: 1em; width: 80%; }
+section > div:nth-child(even) {background-color: rgb(43,209,252); text-align: center;}
+section > div:nth-child(odd) {background-color: rgb(192,77,249); text-align: center;}
+section > div:nth-child(3)::after {content: " \2665\2665\2665";}
+aside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(255,63,63);
+  color: white;
+  border: 1rem solid black;
+  border-top-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-top-right-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+  font-family: sans-serif;
+  margin: 1rem 0 0.5rem 0;
+  text-align: center;
+  width: 80%;
+  min-height: 6em;
+}
+
+h3 > span{
+    font-family: serif;
+    -webkit-text-stroke: 0.1rem rgb(255,255,255);
+    text-shadow: 0 0.2rem rgb(0,0,63);
+}
+
+#zap{
+    display: flex;
+    align-items: center;
+    background-color: rgb(243,234,95); 
+    width: 80%;
+    text-transform: none;
+    margin: 1rem 0 5rem 0;
+   border: 1rem double yellow;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #e570c4;
+  width: calc(100% + 2em);
+  height: 12em;
+  margin-bottom: -1em;
+}
+footer > .wrapper {display: flex; align-items: center; margin: 0 0 1rem 6rem;}
+.wrapper > img {max-height: 8rem; width: auto;}
+.wrapper > span {
+  position: relative;
+  opacity: 0;
+  background: white;
+  border: 0.3rem solid black;
+  border-radius: 10%;
+  display: inline-block; 
+  top: -2rem;
+  margin-left: 2rem;
+  padding: 0.4rem 0.8rem;
+}
+.wrapper > span::before{
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 1rem 1.2rem 1rem 0;
+  border-color: transparent black;
+  top: 0.2rem;
+  left: -1.2em;
+}
+
+img:hover + span {opacity: 1;}
+footer span {font-family: cursive;}
+@media only screen and (max-width: 1024px) {
+  .fun, .fun * {font-size: 3rem;}
+  aside {font-size: 1rem;}
+  h3 > span{font-size: 1.15rem;}
+  header > .wrapper {flex-direction: column;}
+  section {background-color: inherit;}
+  section {align-items: center}
+  section > div {width: 80%; font-size: 0.75rem;}
+  section > div:nth-child(even) {background-color: rgb(43,209,252); text-align: center}
+  section > div:nth-child(odd) {background-color: rgb(192,77,249); text-align: center}
+}
+@media only screen and (min-width: 1025px) {
+  aside {font-size: 2rem;}
+  h3 > span{font-size: 2.5rem;}
+  header > .wrapper {flex-direction: row;}
+  .fun, .fun * {
+    font-size: 4rem;
+    flex-direction: row;
+  }
+  header > .wrapper {flex-direction: row; align-items: center;}
+  section > div {width: 80%; font-size: 1.2rem;}
+  }
+}
