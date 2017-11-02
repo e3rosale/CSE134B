@@ -1,0 +1,8 @@
+.header {background-color: #66a3ff; height:90px ; width: 100%;}
+.header #header_text {font-family: sans-serif; font-size:10px; color: white; font-weight: bolder; text-align: center; line-height: 100px; vertical-align: middle;}
+.main {background-color: #e6e6e6; height: 860px; width: 100%;}
+#register_login_container {background-color: white; height: 700px; width: 100%;}
+#register_box {background-color: #9fdfbd; height: 400px; width: 400px; display: inline-block; margin-top: 120px; margin-left: 120px; margin-right: 30px;}
+#login_box {background-color: #9fdfbd; height: 400px; width: 400px; display: inline-block; margin-left: 30px; }
+#register_header {background-color: #66cc96; height: 90px; width: 100%;}
+#login_header {background-color: #66cc96; height: 90px; width: 100%;}
