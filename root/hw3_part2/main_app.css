@@ -1,9 +1,19 @@
-.header {background-color: #66a3ff; height:90px ; width: 100%;}
-.header #header_text {font-family: sans-serif; font-size:10px; color: white; font-weight: bolder; text-align: center; line-height: 100px; vertical-align: middle;}
+.header {background-color: #66a3ff; height:90px ; width: 100%; display: flex; justify-content: center; align-items: center;}
+.header #header_text {font-family: sans-serif; font-size:30px; color: white; font-weight: bolder;}
+
 .main {background-color: #e6e6e6; height: 860px; width: 100%;}
+
+/*Style rules for the Register/login container that holds register box, vertical line, and login box */
 #register_login_container {background-color: #e6e6e6; height: 750px; width: 100%;}
 #register_box {display: inline-block; background-color: #9fdfbd; height: 400px; width: 400px; margin-top: 130px; vertical-align: top; position: absolute; left: 20%;}
 .vertical_line {display: inline-block; border-left: 6px solid #cccccc; height: 500px; margin-top: 130px; position: absolute; left: 50%; }
 #login_box {display: inline-block; background-color: #9fdfbd; height: 600px; width: 400px; margin-top: 130px; vertical-align: top; position: absolute; right: 20%;}
-#register_header {background-color: #66cc96; height: 90px; width: 100%;}
-#login_header {background-color: #66cc96; height: 90px; width: 100%;}
+
+/*Both are exactly the same, perhaps use a class selector instead of id*/
+#register_header {background-color: #66cc96; height: 90px; width: 100%; display: flex; justify-content: center; align-items: center;}
+#login_header {background-color: #66cc96; height: 90px; width: 100%; display: flex; justify-content: center; align-items: center;}
+
+.header_text {font-family: sans-serif; font-size: 25px; color: white; font-weight: bolder;}
+
+form {text-align: center; margin-top: 60px;}
+.form_button {background-color: #66a3ff; color: white; width: 245px;}
