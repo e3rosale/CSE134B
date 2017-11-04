@@ -1,3 +1,6 @@
-.main_header {background-color: #66a3ff; height:90px ; width: 100%;}
+.main_header {background-color: #66a3ff; height:90px ; width: 100%; text-align: center; display: flex; justify-content: center; align-items: center;}
+.hamburger_menu {display: inline-block; width: 60px; height: 40px; border: 1px solid white; margin-right: 640px; background-color: white;}
 .main_header_text_logo {display: inline-block;}
-.logout_button {display: inline-block;}
+.main_header_text {font-family: sans-serif; font-size:30px; color: white; font-weight: bolder; display: inline-block;}
+.main_header_logo {display: inline-block; width: 30px; height: 30px; border: 1px solid white; background-color: white; margin-left: 15px;}
+.logout_button {display: inline-block; margin-left: 640px;}
