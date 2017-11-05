@@ -1,7 +1,7 @@
 .header {background-color: #66a3ff; height:90px ; width: 100%; display: flex; justify-content: center; align-items: center;}
 .header #header_text {font-family: sans-serif; font-size:30px; color: white; font-weight: bolder;}
 
-.main {background-color: #e6e6e6; height: 1000px; width: 100%;}
+.main {background-color: beige; height: 1000px; width: 100%;}
 
 /*Style rules for the Register/login container that holds register box, vertical line, and login box */
 #register_login_container {background-color: #e6e6e6; height: 750px; width: 100%;}
