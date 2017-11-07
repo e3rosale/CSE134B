@@ -1,0 +1,32 @@
+[debug] [2017-11-07T08:59:12.948Z] ----------------------------------------------------------------------
+[debug] [2017-11-07T08:59:12.950Z] Command:       /usr/local/Cellar/node/8.2.1/bin/node /usr/local/bin/firebase deploy
+[debug] [2017-11-07T08:59:12.950Z] CLI Version:   3.13.1
+[debug] [2017-11-07T08:59:12.950Z] Platform:      darwin
+[debug] [2017-11-07T08:59:12.950Z] Node Version:  v8.2.1
+[debug] [2017-11-07T08:59:12.950Z] Time:          Tue Nov 07 2017 00:59:12 GMT-0800 (PST)
+[debug] [2017-11-07T08:59:12.951Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-07T08:59:12.967Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-07T08:59:12.967Z] > authorizing via signed-in user
+[debug] [2017-11-07T08:59:12.969Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-11-07T08:59:12.969Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/Wo9OtCWKdSSiYGZ9OfRDa0qyIGwpo79NmyjV99Ll6mc',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Tue Nov 07 2017 00:59:12 GMT-0800 (PST)
+[debug] [2017-11-07T08:59:13.145Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-07T08:59:13.158Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/hw2-cse134b-3ffd9  
+ Tue Nov 07 2017 00:59:13 GMT-0800 (PST)
+[debug] [2017-11-07T08:59:13.726Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-07T08:59:13.728Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/hw2-cse134b-3ffd9/tokens  
+ Tue Nov 07 2017 00:59:13 GMT-0800 (PST)
+[debug] [2017-11-07T08:59:14.584Z] <<< HTTP RESPONSE 200
+[info] 1
+[info] 
+[info] === Deploying to 'hw2-cse134b-3ffd9'...
+[info] 
+[info] i  deploying hosting
+[info] i  hosting: preparing root directory for upload...
+[debug] [2017-11-07T08:59:16.983Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/hw2-cse134b-3ffd9/uploads/-KyKh7-KxNLVSSlhEJKC?fileCount=81&message=  
+ Tue Nov 07 2017 00:59:16 GMT-0800 (PST)
