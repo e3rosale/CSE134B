@@ -1,5 +1,5 @@
 /* Style rules for the main page header and all of its elements (hamburger menu icon, page header, and logout button) */
-.main_header {background-color: #66a3ff; height: 90px ; width: 100%; text-align: center; display: flex; justify-content: center; align-items: center;}
+.main_header {background-color: #66a3ff; height: 90px ; width: 100%; text-align: center; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid black;}
 .hamburger_menu {width: 60px; height: 40px; margin-right: 640px; text-align: center; display: flex; justify-content: center; align-items: center;}
 .main_header_text_logo {display: inline-block; text-align: center; display: flex; justify-content: center; align-items: center;}
 .main_header_text {font-family: sans-serif; font-size: 30px; color: white; font-weight: bolder; display: inline-block;}
@@ -10,7 +10,7 @@
 .main {background-color: #e6e6e6; height: 1000px; width: 100%; display: flex; justify-content: center;}
 
 /* Style rules for the settings box and all of its elements (grid, row, columns, etc) */
-.setting_box {width: 800px; height: 645px; background-color: #66a3ff; margin-top: 125px; text-align: center;}
+.setting_box {width: 800px; height: 645px; background-color: #66a3ff; margin-top: 125px; text-align: center; border-radius: 10px; border: 1px solid black;}
 .setting_box_grid_container {width: 700px; height: 525px; background-color: #66a3ff; margin: auto; margin-top: 45px;}
 .row {width: 700px; height: 80px; margin-bottom: 25px; display: flex;}
 .column_1 {width: 200px; height: 80px; background-color: white; margin-right: 50px; display: inline-block; text-align: center; display: flex; justify-content: center; align-items: center;}
