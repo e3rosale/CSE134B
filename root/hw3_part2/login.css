@@ -5,8 +5,11 @@
 
 .login_wrapper {background-color: #e6e6e6; height:600px; width: 100%; display: flex; justify-content: center; align-items: center;}
 #login_box {background-color: white; height: auto; width: 400px; display: flex; flex-wrap: wrap; justify-content: center; border: 1px solid black; border-radius: 10px;}
-#login_header {background-color:  #66a3ff; height: 90px; width: 100%; display: flex; justify-content: space-around; align-items: center; border-bottom: 1px solid black; border-top-left-radius: 10px; border-top-right-radius: 10px;}
+#login_header {background-color:  #66a3ff; height: 90px; width: 100%; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid black; border-top-left-radius: 10px; border-top-right-radius: 10px;}
 .header_text {font-family: sans-serif; font-size: 26px; color: white; font-weight: bolder;}
+.add_person_logo {margin-left: 30px;}
 .form_wrapper {height: 200px; width: 100%; background-color: white; display: flex; justify-content: center; align-items: center;}
-.forgot_password_wrapper {background-color: white; height: 60px; width: 100%; display: flex; justify-content: center; align-items: center;}
-.new_user_link_wrapper {background-color: white; height: 60px; width: 100%; display: flex; justify-content: center; align-items: center; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;}
+.forgot_password_wrapper {background-color: white; height: 35px; width: 100%; display: flex; justify-content: center; align-items: center;}
+.forgot_password_wrapper p {font-family: sans-serif; color: black; font-weight: bolder; text-decoration: underline;}
+.new_user_link_wrapper {background-color: white; height: 80px; width: 100%; display: flex; justify-content: center; align-items: center; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;}
+.new_user_link_wrapper p {font-family: sans-serif; color: black; font-weight: bolder; text-decoration: underline;}
