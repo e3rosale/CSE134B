@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+	<title>Soccer App</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" media="screen">
+	<link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Pacifico" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</head>
+<body style="height: 100%">
+	<header class="container-fluid bg-primary" style="padding-bottom: 1em">
+		<div class="row align-items-center">
+			<div class="col-xs-12 text-center">
+				<h1 style="font-family: 'Pacifico', cursive;">TeamWatch</h1>
+			</div>
+		</div>
+	</header>
+	
+
+	<div class="container-fluid" style="margin-top: 2em; min-height: 50%;">
+		<div class="row">
+			
+		</div>
+		<div class="row align-items-center" style="margin-top: 4em; ">
+			<div class="col-md-offset-4 col-xs-offset-1 col-md-4 col-xs-10 bg-primary text-center">
+					<h2>Register<span class="glyphicon glyphicon-plus" aria-hidden="true" style="padding-left: 1em;">
+								<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+					</h2>
+				</div>
+
+			<div class="col-md-offset-4 col-xs-offset-1 col-md-4 col-xs-10" style="border: 1px solid black; min-height: 100%;">
+				<form style="margin-top: 1em; margin-bottom: 1em;">
+					<div class="form-group">
+			    		<label for="fname">First Name</label>
+			    		<input type="text" class="form-control" id="Fname" placeholder="Enter your first name">
+			  		</div>
+			  		<div class="form-group">
+			    		<label for="lname">Last Name</label>
+			    		<input type="text" class="form-control" id="Lname" placeholder="Enter your last name">
+			  		</div>
+			  		<div class="form-group">
+			    		<label for="email">Email address</label>
+			    		<input type="email" class="form-control" id="Email" placeholder="Enter email">
+			  		</div>			  		
+			  		<div class="form-group">
+			    		<label for="password">Password</label>
+			    		<input type="password" class="form-control Password" placeholder="Password">
+			  		</div>
+			  		<div class="form-group">
+			    		<label for="password">Confirm Password</label>
+			    		<input type="password" class="form-control Password" placeholder="Password">
+			  		</div>
+			  		<div>
+				  		<label for="typeOfUser">What are you?</label><br>
+				  		<label class="radio-inline"><input type="radio" name="userType" value="parent">Parent</label>
+						<label class="radio-inline"><input type="radio" name="userType" value="player">Player</label>
+						<label class="radio-inline"><input type="radio" name="userType" value="coach">Coach</label>
+					</div>
+					<br><input type="button" class="btn btn-primary" value="Register" onclick="location.href='dashboardBootstrap.html'">	 		
+			 		<a href="loginBootstrap.html"><span style="padding-left: 1em">Already registered? Click here to login</span></a>			 	
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
