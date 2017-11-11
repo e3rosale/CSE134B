@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+	<title>Bootstrap Roster Page</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" media="screen">
+	<link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Pacifico" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		@media screen and (max-width: 430px) {
+			.h1 {
+				font-size: 20px;
+			}
+
+			.h2 {
+				font-size: 14px;
+			}
+
+			.adjust {
+				font-size: 9px;
+			}
+		}
+
+		#nav-items {
+			color: white;
+		}
+		.nav.navbar-nav li a {
+			color: white;
+		}
+
+		.no-wrap {
+    		white-space: normal;
+		}
+
+	</style>
+</head>
+<body style="height: 100%">
+	<nav class="navbar navbar-inverse fixed-top" style="background-color: #428bca;">
+			<div class="container-fluid">
+			<div class="navbar-header">
+  				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+  				</button>
+  				<a class="navbar-brand" href="/hw3_part2/bootstrap/dashboardBootstrap.html"
+  				   style="color: black; font-family: 'Pacifico', cursive;">Dashboard</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+  				<ul class="nav navbar-nav">
+			        <li><a href="/rosterBootstrap.html">Roster</a></li>
+			        <li><a href="/scheduleBootstrap.html">Schedule</a></li>
+			        <li><a href="/teamstatsBootstrap.html">Stats</a></li>
+			     </ul>
+  				<ul class="nav navbar-nav navbar-right">
+			        <li><a href="settingsBootstrap.html" style="color: black;"><span class="glyphicon glyphicon-briefcase"></span> Settings</a></li>
+			        <li><a href="loginBootstrap.html" style="color: black;"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+  				</ul>
+			</div>
+		 	</div>
+	</nav>
+  <div class="container-fluid" style="padding-top: 1em; padding-bottom:1em; min-height: 15%;">
+		<div class="row align-middle">
+			<div class="col-xs-offset-1 col-sm-offset-4 col-xs-10 col-sm-4" align="center">
+				<div class="input-group">
+					<span class="input-group-addon" id="season"
+						  style="background-color: #428bca; color: white; width: 50%; padding-top: 1em; padding-bottom: 1em">Season</span>
+					<input type="date" name="Date" class="from-control" style="min-width: 50%; padding-top: 1em; padding-bottom: 1em">
+				</div>
+			</div>
+		</div>
+  
+  </div>
+</body>
+</html>
