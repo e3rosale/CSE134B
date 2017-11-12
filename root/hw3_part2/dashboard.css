@@ -1,10 +1,11 @@
-.main_header {background-color: #66a3ff; height: 90px ; width: 100%; text-align: center; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid black;}
-.hamburger_menu {width: 60px; height: 40px; margin-right: 640px; text-align: center; display: flex; justify-content: center; align-items: center;}
-.main_header_text_logo {display: inline-block; text-align: center; display: flex; justify-content: center; align-items: center;}
-.main_header_text {font-family: sans-serif; font-size:30px; color: white; font-weight: bolder; display: inline-block;}
-.main_header_logo {width: 50px; height: 40px; margin-left: 10px; text-align: center; display: flex; justify-content: center; align-items: center;}
-.logout_button {display: inline-block; margin-left: 640px;}
-
+.main_header {background-color: #66a3ff; height: 90px ; width: 100%; display: flex; border-bottom: 1px solid black;}
+.hamburger_menu_wrapper {height: 100%; width: 15%; display: flex; justify-content: center; align-items: center;}
+.hamburger_logo_wrapper {height: 40px; width: 60px; display: flex; justify-content: center; align-items: center;}
+.main_header_text_logo {height: 100%; width: 70%; display: flex; justify-content: center; align-items: center;}
+.main_header_text {font-family: sans-serif; font-size: 30px; color: white; font-weight: bolder;}
+.main_header_logo {width: 60px; height: 60px; margin-left: 10px; display: flex; justify-content: center; align-items: center;}
+.logout_menu_wrapper {height: 100%; width: 15%; display: flex; justify-content: center; align-items: center;}
+.logout_button_wrapper {height: 40px; width: 80px; display: flex; justify-content: center; align-items: center;}
 
 .main {background-color: #e6e6e6; height: 1000px; width: 100%;}
 
