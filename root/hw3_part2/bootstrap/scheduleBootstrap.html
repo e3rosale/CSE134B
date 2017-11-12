@@ -38,6 +38,12 @@
 			color: white;
 		}
 
+		.disabled {
+   			pointer-events: none;
+   			cursor: default;
+   			color: grey;
+		}
+
 	</style>
 </head>
 <body style="height: 100%">	
@@ -70,7 +76,7 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-8 col-sm-offset-2 adjust">
 				<div  style="background-color: black">
-					<span class="adjust" style="font-family: 'Architects Daughter', cursive; color: white"><p class="h2 text-center">Roster</p></span>
+					<span class="adjust" style="font-family: 'Architects Daughter', cursive; color: white"><p class="h2 text-center">Schedule</p></span>
 				</div>	
 			</div>
 		</div>
@@ -80,113 +86,79 @@
 				<table class="table table-inverse" style="background-color: #428bca; color: white;">
 				  <thead>
 				    <tr style="color: black">
-				      <th>#</th>
-				      <th>Name</th>
-				      <th>Goals</th>
-				      <th>Yellow Card</th>
-				      <th>Red Card</th>
+				      <th>Date</th>
+				      <th>Game</th>
+				      <th>Location</th>
+				      <th>Status</th>
 				      <th>Edit</th>
 				      <th><span class="glyphicon glyphicon-trash"></span></th>
 				    </tr>
 				  </thead>
 				  <tbody>
 				    <tr>
-				      <th scope="row">1</th>
-				      <td>Kevin Trapp</td>
-				      <td>0</td>
-				      <td>0</td>
-				      <td>0</td>
-				      <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
+				      <th scope="row"><time datetime="2017-02-15">02/15</time></th>
+				      <td>Oponent - 1<br> vs <br>My Team - 0</td>
+				      <td>Stadium theirs</td>
+				      <td>Away</td>
+				      <td><a href="editgameBootstrap.html"  class="disabled"><span class="glyphicon glyphicon-pencil"></span></a></td>
 				      <td><input type="checkbox" name="" id=""></td>
 				    </tr>
 				    <tr>
-				      <th scope="row">2</th>
-				      <td>Thiago Silva</td>
-				      <td>0</td>
-				      <td>1</td>
-				      <td>0</td>
-				      <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
+				      <th scope="row"><time datetime="2017-03-15">03/15</time></th>
+				      <td>My Team - 2<br> vs <br>Oponent - 1</td>
+				      <td>Stadium ours</td>
+				      <td>Home</td>
+				      <td><a href="editgameBootstrap.html" class="disabled"><span class="glyphicon glyphicon-pencil"></span></a></td>
+				      <td><input type="checkbox" name="" id=""></td>
+				    </tr>
+				    </tr>
+				    </tr>
+				    <tr>
+				       <th scope="row"><time datetime="2017-04-15">04/15</time></th>
+				      <td>My Team - 3<br> vs <br>Oponent - 0</td>
+				      <td>Stadium ours</td>
+				      <td>Home</td>
+				      <td><a href="editgameBootstrap.html" class="disabled"><span class="glyphicon glyphicon-pencil"></span></a></td>
 				      <td><input type="checkbox" name="" id=""></td>
 				    </tr>
 				    <tr>
-				      <th scope="row">3</th>
-				      <td>Presnel Kimpembe</td>
-				      <td>0</td>
-				      <td>3</td>
-				      <td>0</td>
-				      <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
+				       <th scope="row"><time datetime="2017-05-15">07/15</time></th>
+				      <td>Oponent - 3<br>vs <br>My Team - 4</td>
+				      <td>Stadium theirs</td>
+				      <td>Away</td>
+				      <td><a href="editgameBootstrap.html" class="disabled"><span class="glyphicon glyphicon-pencil"></span></a></td>
+				      <td><input type="checkbox" name="" id=""></td>
+				    </tr>
+				    <tr style="color: red">
+				      <th scope="row"><time datetime="2017-06-15">Today!<br>011/15</time></th><!--Today's game -->
+				      <td>My Team -<br>vs <br>Oponent -</td>
+				      <td>Stadium ours</td>
+				      <td>Home</td>
+				      <td><a href="editgameBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
 				      <td><input type="checkbox" name="" id=""></td>
 				    </tr>
 				    <tr>
-				      <th scope="row">5</th>
-				      <td>Marquinhos</td>
-				      <td>0</td>
-				      <td>1</td>
-				      <td>0</td>
-				      <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
+				      <th scope="row"><time datetime="2017-07-15">11/30</time></th>
+				      <td>Oponent -<br>vs <br>My Team -</td>
+				      <td>Stadium theirs</td>
+				      <td>Away</td>
+				      <td><a href="editgameBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
 				      <td><input type="checkbox" name="" id=""></td>
 				    </tr>
 				    <tr>
-				      <th scope="row">6</th>
-				      <td>Marco Veratti</td>
-				      <td>0</td>
-				      <td>2</td>
-				      <td>1</td>
-				     <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
+				       <th scope="row"><time datetime="2017-08-15">12-05</time></th>
+				      <td>My Team -<br> vs <br>Oponent -</td>
+				      <td>Stadium ours</td>
+				      <td>Home</td>
+				      <td><a href="editgameBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
 				      <td><input type="checkbox" name="" id=""></td>
 				    </tr>
 				    <tr>
-				      <th scope="row">7</th>
-				      <td>Lucas Moura</td>
-				      <td>1</td>
-				      <td>1</td>
-				      <td>0</td>
-				     <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">8</th>
-				      <td>Thiago Motta</td>
-				      <td>1</td>
-				      <td>2</td>
-				      <td>0</td>
-				     <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">9</th>
-				      <td>Edinson Cavani</td>
-				      <td>13</td>
-				      <td>0</td>
-				      <td>0</td>
-				      <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">10</th>
-				      <td>Neymar</td>
-				      <td>7</td>
-				      <td>2</td>
-				      <td>1</td>
-				     <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">11</th>
-				      <td>Angel Di Maria</td>
-				      <td>0</td>
-				      <td>0</td>
-				      <td>0</td>
-				      <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">29</th>
-				      <td>Kylian Mbappe</td>
-				      <td>4</td>
-				      <td>2</td>
-				      <td>0</td>
-				      <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
+				       <th scope="row"><time datetime="2017-12-15">12-15</time></th>
+				      <td>Oponent -<br>vs <br>My Team -</td>
+				      <td>Stadium theirs</td>
+				      <td>Away</td>
+				      <td><a href="editgameBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
 				      <td><input type="checkbox" name="" id=""></td>
 				    </tr>
 				  </tbody>
@@ -195,11 +167,11 @@
 		</div>
 		<div class="row" style="padding-top: 1em">
 			<div class="col-xs-12 col-sm-8 col-sm-offset-2 responsive no-wrap">				
-				<a href="addplayerBootstrap.html" type="button" class="btn btn-primary btn-sm">Add Player
+				<a href="addgameBootstrap.html" type="button" class="btn btn-primary btn-sm">Add Game
 					<span class="glyphicon glyphicon-plus"></span>
 				</a>
 		
-				<a href="" type="button" class="btn btn-danger btn-sm">Delete Player
+				<a href="" type="button" class="btn btn-danger btn-sm">Delete Game
 					<span class="glyphicon glyphicon-minus"></span>
 				</a>						
 			</div>

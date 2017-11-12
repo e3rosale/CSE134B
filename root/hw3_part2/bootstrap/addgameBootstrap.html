@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+	<title>TeamWatch</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" media="screen">
+	<link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Pacifico" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		@media screen and (max-width: 430px) {
+			.h1 {
+				font-size: 20px;
+			}
+
+			.h2 {
+				font-size: 14px;
+			}
+
+			.adjust {
+				font-size: 9px;
+			}			
+		}
+	</style>
+</head>
+<body style="height: 100%" class="adjust">
+	<header class="container-fluid bg-primary" style="padding-bottom: 1em">
+		<div class="row align-items-center">
+			<div class="col-xs-12 text-center">
+				<p class="h1" style="font-family: 'Pacifico', cursive;">TeamWatch</p>
+			</div>
+		</div>
+	</header>
+	
+
+	<div class="container-fluid" style="margin-top: 2em; min-height: 50%;">
+		<div class="row align-items-center" style="margin-top: 4em; ">
+			<div class="col-sm-offset-4 col-xs-offset-1 col-sm-4 col-xs-10 bg-primary text-center">
+				<p class="h2">New Game<span class="glyphicon glyphicon-plus" aria-hidden="true" style="padding-left: 1em;"></span></p>
+			</div>
+
+			<div class="col-sm-offset-4 col-xs-offset-1 col-sm-4 col-xs-10" style="border: 1px solid black; min-height: 100%;">
+				<form style="margin-top: 1em; margin-bottom: 1em;">
+					<div class="form-group">
+			    		<label for="oponent">Oponent</label>
+			    		<input type="text" class="form-control" id="oponent" placeholder="Enter oponent">
+			  		</div>
+			  		<div class="form-group">
+			    		<label for="location">Location</label>
+			    		<input type="text" class="form-control" id="location" placeholder="Enter location">
+			  		</div>		  		
+			  		<div class="form-group">
+			    		<label for="date">Date</label>
+			    		<input type="date" class="form-control">
+			  		</div>
+			  		<div class="form-group">
+      					<label>Status:</label>
+      					<div class="radio">
+  							<label><input type="radio" name="status" value="home">Home</label>
+						</div>
+						<div class="radio">
+  							<label><input type="radio" name="status" value="away">Away</label>
+						</div>
+    				</div>
+    				<br><a class="btn btn-success" type="button" value="Create" href="./scheduleBootstrap.html">Create</a>
+    				    <a class="btn btn-danger" type="button" value="cancel" href="./scheduleBootstrap.html">Cancel</a>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
