@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" style="height: 100%">
 <head>
-	<title>Soccer App</title>
+	<title>TeamWatch</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" media="screen">
-	<link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Pacifico" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Pacifico|Ruda" rel="stylesheet">
 	<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 	<style type="text/css">
 		@media screen and (max-width: 430px) {
@@ -20,7 +20,23 @@
 
 			.adjust {
 				font-size: 9px;
+			}
+
+			.nice-font {
+				font-size: 15px;
 			}			
+		}
+
+		@media screen and (min-width: 630px) {
+			.img-size {
+				max-width: 350px;
+				max-height: 350px;
+			}
+
+			.well {
+				max-width: 370px;
+				max-height: 430px;
+			}
 		}
 
 		#nav-items {
@@ -28,6 +44,10 @@
 		}
 		.nav.navbar-nav li a {
 			color: white;
+		}
+
+		.nice-font {
+			font-family: 'Ruda', sans-serif;
 		}
 
 	</style>
@@ -41,14 +61,14 @@
         			<span class="icon-bar"></span>
         			<span class="icon-bar"></span> 
   				</button>
-  				<a class="navbar-brand" href="#" style="color: black; font-family: 'Pacifico', cursive;">TeamWatch</a>
+  				<a class="navbar-brand" href="#" style="color: white; font-family: 'Pacifico', cursive;">TeamWatch</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
   				<ul class="nav navbar-nav">
 			        <li><a href="#">Home</a></li>
-			        <li><a href="/rosterBootstrap.html">Roster</a></li>
-			        <li><a href="/scheduleBootstrap.html">Schedule</a></li> 
-			        <li><a href="/teamstatsBootstrap.html">Stats</a></li> 
+			        <li><a href="./rosterBootstrap.html">Roster</a></li>
+			        <li><a href="./scheduleBootstrap.html">Schedule</a></li> 
+			        <li><a href="./statsBootstrap.html">Stats</a></li> 
 			     </ul>
   				<ul class="nav navbar-nav navbar-right">
 			        <li><a href="settingsBootstrap.html" style="color: black;"><span class="glyphicon glyphicon-briefcase"></span> Settings</a></li>
@@ -59,34 +79,27 @@
 	</nav>
 	
 	<div class="container-fluid" style="padding-top: 1em; padding-bottom:1em; min-height: 15%;">
-		<div class="row align-middle">
-			<div class="col-xs-offset-1 col-sm-offset-4 col-xs-10 col-sm-4" align="center">
-				<div class="input-group">
-					<span class="input-group-addon" id="season" 
-						  style="background-color: #428bca; color: white; width: 50%; padding-top: 1em; padding-bottom: 1em">Season</span>
-					<input type="date" name="Date" class="from-control" style="min-width: 50%; padding-top: 1em; padding-bottom: 1em">
-				</div>
-			</div>
-		</div>
-
 		<div class="row" style="padding-top: 1em;">
-			<div class="col-xs-3 col-sm-4">
-				<div class="well well-sm" style="background-color: #428bca;">
+			<div class="col-xs-8 col-sm-6 col-xs-offset-2 col-sm-offset-3" >
+				<div class="well well-sm center-block" style="background-color: #428bca;">
 					<span class="adjust">
 						<p class="text-center" style="font-family: 'Architects Daughter', cursive; color: white">Paris Saint German
 						 	<a href=""><i class="glyphicon glyphicon-pencil" style="padding-left: 1em; size: 1em; color: black"></i></a>
 						 	<a href=""><i class="glyphicon glyphicon-picture" style="padding-left: 1em; size: 1em; color: black"></i></a>
 						</p>
 					</span>
-					<img src="./../../psg.jpg" class="img-responsive">
+					<img src="./../../psg.jpg" class="img-responsive img-size center-block">
 				</div>	
 			</div>
-			<div class="col-xs-9 col-sm-8 adjust">
+		</div>
+
+		<div class="row" style="padding-top: 1em;">
+			<div class="col-xs-10 col-sm-8 col-xs-offset-1 col-sm-offset-2 adjust">
 				<div  style="background-color: black">
 					<span class="adjust" style="font-family: 'Architects Daughter', cursive; color: white"><p class="h2 text-center">Table</p></span>
 				</div>	
 			</div>
-			<div class="col-xs-9 col-sm-8 adjust">
+			<div class="col-xs-10 col-sm-8 col-xs-offset-1 col-sm-offset-2 adjust">
 				<table class="table table-inverse" style="background-color: #428bca; color: white;">
 				  <thead>
 				    <tr style="color: black">
@@ -125,6 +138,57 @@
 				      <th scope="row">6</th>
 				      <td>Lyon</td>
 				      <td>16</td>
+				    </tr>
+				  </tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="row" style="padding-top: 1em;">
+			<div class="col-xs-10 col-sm-8 col-xs-offset-1 col-sm-offset-2 adjust">
+				<div  style="background-color: black">
+					<span class="adjust" style="font-family: 'Architects Daughter', cursive; color: white"><p class="h2 text-center">Next Game</p></span>
+				</div>	
+			</div>
+			<div class="col-xs-10 col-sm-8 col-xs-offset-1 col-sm-offset-2 adjust text-center">
+				<p class="nice-font h3">12/01 at 3:40pm</p>
+				<p class="nice-font h3">Barcelona vs PSG</p>
+				<p class="nice-font h3">Camp Nou</p>
+			</div>
+		</div>
+
+		<div class="row" style="padding-top: 1em;">
+			<div class="col-xs-10 col-sm-8 col-xs-offset-1 col-sm-offset-2 adjust">
+				<div  style="background-color: black">
+					<span class="adjust" style="font-family: 'Architects Daughter', cursive; color: white"><p class="h2 text-center">Stats</p></span>
+				</div>	
+			</div>
+			<div class="col-xs-10 col-sm-8 col-xs-offset-1 col-sm-offset-2 adjust text-center">
+				<table class="table table-inverse" style="background-color: #428bca; color: white;">
+				  <tbody>
+				    <tr>
+				      <th scope="row" style="color: black">Poins</th>
+				      <td>25</td>
+				    </tr>
+				    <tr>
+				      <th scope="row" style="color: black">Wins</th>
+				      <td>27</td>
+				    </tr>
+				    <tr>
+				     <th scope="row" style="color: black">Loss</th>
+				      <td>3</td>
+				    </tr>
+				    <tr>
+				      <th scope="row" style="color: black">Ties</th>
+				      <td>4</td>
+				    </tr>
+				    <tr>
+				     <th scope="row" style="color: black">Goals For</th>
+				      <td>18</td>
+				    </tr>
+				    <tr>
+				     <th scope="row" style="color: black">Goals Against</th>
+				      <td>5</td>
 				    </tr>
 				  </tbody>
 				</table>
