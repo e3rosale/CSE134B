@@ -9,6 +9,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 	<style type="text/css">
+
 		@media screen and (max-width: 430px) {
 			.h1 {
 				font-size: 20px;
@@ -40,7 +41,7 @@
 
 	</style>
 </head>
-<body style="height: 100%">	
+<body onload="fetchRoster()" style="height: 100%">	
 	<nav class="navbar navbar-inverse fixed-top" style="background-color: #428bca;">
 			<div class="container-fluid">
 			<div class="navbar-header">
@@ -75,6 +76,7 @@
 			</div>
 		</div>
 
+		
 		<div class="row">
 			<div class="col-xs-12 col-sm-8 col-sm-offset-2">
 				<table class="table table-inverse" style="background-color: #428bca; color: white;">
@@ -82,14 +84,22 @@
 				    <tr style="color: black">
 				      <th>#</th>
 				      <th>Name</th>
-				      <th>Goals</th>
-				      <th>Yellow Card</th>
-				      <th>Red Card</th>
+				      <th>Email</th>
+				      <th>Age</th>
+				      <th>Position</th>
 				      <th>Edit</th>
 				      <th><span class="glyphicon glyphicon-trash"></span></th>
 				    </tr>
 				  </thead>
-				  <tbody>
+				  <tbody id="rosterList">
+					<!--	<div id="rosterList"> </div> -->
+        		
+      		
+
+
+
+
+				  	<!--
 				    <tr>
 				      <th scope="row">1</th>
 				      <td>Kevin Trapp</td>
@@ -189,10 +199,12 @@
 				      <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
 				      <td><input type="checkbox" name="" id=""></td>
 				    </tr>
+
+				-->
 				  </tbody>
 				</table>
 			</div>
-		</div>
+		</div> 
 		<div class="row" style="padding-top: 1em">
 			<div class="col-xs-12 col-sm-8 col-sm-offset-2 responsive no-wrap">				
 				<a href="addplayerBootstrap.html" type="button" class="btn btn-primary btn-sm">Add Player
@@ -205,6 +217,7 @@
 			</div>
 		</div>
 	</div>
-	
+
+	<script src="main.js"></script>
 </body>
 </html>
