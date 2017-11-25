@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+	<title>TeamWatch</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css" media="screen">
+	<link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Pacifico" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<style type="text/css">
+
+		@media screen and (max-width: 430px) {
+			.h1 {
+				font-size: 20px;
+			}
+
+			.h2 {
+				font-size: 14px;
+			}
+
+			.adjust {
+				font-size: 9px;
+			}			
+		}
+
+		#nav-items {
+			color: white;
+		}
+		.nav.navbar-nav li a {
+			color: white;
+		}
+
+		.no-wrap {
+    		white-space: normal;
+		}
+
+		td a {
+			color: white;
+		}
+
+	</style>
+</head>
+<body onload="fetchRoster()" style="height: 100%">	
+	<nav class="navbar navbar-inverse fixed-top" style="background-color: #428bca;">
+			<div class="container-fluid">
+			<div class="navbar-header">
+  				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span> 
+  				</button>
+  				<a class="navbar-brand" href="./dashboardBootstrap.html" style="color: white; font-family: 'Pacifico', cursive;">TeamWatch</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+  				<ul class="nav navbar-nav">
+  					<li><a href="./dashboardBootstrap.html">Home</a></li>
+			        <li><a href="./rosterBootstrap.html">Roster</a></li>
+			        <li><a href="./scheduleBootstrap.html">Schedule</a></li> 
+			        <li><a href="./statsBootstrap.html">Stats</a></li> 
+			     </ul>
+  				<ul class="nav navbar-nav navbar-right">
+			        <li><a href="settingsBootstrap.html" style="color: black;"><span class="glyphicon glyphicon-briefcase"></span> Settings</a></li>
+			        <li><a href="loginBootstrap.html" style="color: black;"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
+  				</ul>
+			</div>
+		 	</div>
+	</nav>
+	
+	<div class="container-fluid adjust">
+		<div class="row">
+			<div class="col-xs-12 col-sm-8 col-sm-offset-2 adjust">
+				<div  style="background-color: black">
+					<span class="adjust" style="font-family: 'Architects Daughter', cursive; color: white"><p class="h2 text-center">Roster</p></span>
+				</div>	
+			</div>
+		</div>
+
+		
+		<div class="row">
+			<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+				<table class="table table-inverse" style="background-color: #428bca; color: white;">
+				  <thead>
+				    <tr style="color: black">
+				      <th>#</th>
+				      <th>Name</th>
+				      <th>Email</th>
+				      <th>Age</th>
+				      <th>Position</th>
+				      <th>Edit</th>
+				      <th><span class="glyphicon glyphicon-trash"></span></th>
+				    </tr>
+				  </thead>
+				  <tbody id="rosterList">
+					<!--	<div id="rosterList"> </div> -->
+        		
+      		
+
+
+
+
+				  	<!--
+				    <tr>
+				      <th scope="row">1</th>
+				      <td>Kevin Trapp</td>
+				      <td>0</td>
+				      <td>0</td>
+				      <td>0</td>
+				      <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
+				      <td><input type="checkbox" name="" id=""></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">2</th>
+				      <td>Thiago Silva</td>
+				      <td>0</td>
+				      <td>1</td>
+				      <td>0</td>
+				      <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
+				      <td><input type="checkbox" name="" id=""></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">3</th>
+				      <td>Presnel Kimpembe</td>
+				      <td>0</td>
+				      <td>3</td>
+				      <td>0</td>
+				      <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
+				      <td><input type="checkbox" name="" id=""></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">5</th>
+				      <td>Marquinhos</td>
+				      <td>0</td>
+				      <td>1</td>
+				      <td>0</td>
+				      <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
+				      <td><input type="checkbox" name="" id=""></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">6</th>
+				      <td>Marco Veratti</td>
+				      <td>0</td>
+				      <td>2</td>
+				      <td>1</td>
+				     <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
+				      <td><input type="checkbox" name="" id=""></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">7</th>
+				      <td>Lucas Moura</td>
+				      <td>1</td>
+				      <td>1</td>
+				      <td>0</td>
+				     <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
+				      <td><input type="checkbox" name="" id=""></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">8</th>
+				      <td>Thiago Motta</td>
+				      <td>1</td>
+				      <td>2</td>
+				      <td>0</td>
+				     <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
+				      <td><input type="checkbox" name="" id=""></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">9</th>
+				      <td>Edinson Cavani</td>
+				      <td>13</td>
+				      <td>0</td>
+				      <td>0</td>
+				      <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
+				      <td><input type="checkbox" name="" id=""></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">10</th>
+				      <td>Neymar</td>
+				      <td>7</td>
+				      <td>2</td>
+				      <td>1</td>
+				     <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
+				      <td><input type="checkbox" name="" id=""></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">11</th>
+				      <td>Angel Di Maria</td>
+				      <td>0</td>
+				      <td>0</td>
+				      <td>0</td>
+				      <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
+				      <td><input type="checkbox" name="" id=""></td>
+				    </tr>
+				    <tr>
+				      <th scope="row">29</th>
+				      <td>Kylian Mbappe</td>
+				      <td>4</td>
+				      <td>2</td>
+				      <td>0</td>
+				      <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
+				      <td><input type="checkbox" name="" id=""></td>
+				    </tr>
+
+				-->
+				  </tbody>
+				</table>
+			</div>
+		</div> 
+		<div class="row" style="padding-top: 1em">
+			<div class="col-xs-12 col-sm-8 col-sm-offset-2 responsive no-wrap">				
+				<a href="addplayerBootstrap.html" type="button" class="btn btn-primary btn-sm">Add Player
+					<span class="glyphicon glyphicon-plus"></span>
+				</a>
+		
+				<a href="" type="button" class="btn btn-danger btn-sm">Delete Player
+					<span class="glyphicon glyphicon-minus"></span>
+				</a>						
+			</div>
+		</div>
+	</div>
+
+	<script src="main.js"></script>
+</body>
+</html>

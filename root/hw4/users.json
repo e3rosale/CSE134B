@@ -1,0 +1,39 @@
+{
+	"users": [
+			{
+				"id" : "1",
+				"fname" : "Jose",
+				"lname" : "Rodriguez",
+				"email" : "jose@gmail.com",
+				"password" : "helloworld",
+				"userType" : "player"
+			},
+
+			{
+				
+				"fname" : "Eddie",
+				"lname" : "Rosales",
+				"email" : "eddie@gmail.com",
+				"password" : "helloworld",
+				"userType" : "player"
+
+			}
+
+			{
+				"fname" : "Gustavo",
+				"lname" : "Carbone",
+				"email" : "gustavo@gmail.com",
+				"password" : "helloworld",
+				"userType" : "player"
+			}
+
+			{
+				"fname" : "Thomas",
+				"lname" : "Powell",
+				"email" : "thomas@gmail.com",
+				"password" : "helloworld",
+				"userType" : "coach"
+			}
+
+
+]}
