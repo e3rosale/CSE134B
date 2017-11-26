@@ -46,7 +46,7 @@
 
 	</style>
 </head>
-<body style="height: 100%">	
+<body style="height: 100%" onload="fetchSchedule()">	
 	<nav class="navbar navbar-inverse fixed-top" style="background-color: #428bca;">
 			<div class="container-fluid">
 			<div class="navbar-header">
@@ -94,73 +94,7 @@
 				      <th><span class="glyphicon glyphicon-trash"></span></th>
 				    </tr>
 				  </thead>
-				  <tbody>
-				    <tr>
-				      <th scope="row"><time datetime="2017-02-15">02/15</time></th>
-				      <td>Oponent - 1<br> vs <br>My Team - 0</td>
-				      <td>Stadium theirs</td>
-				      <td>Away</td>
-				      <td><a href="editgameBootstrap.html"  class="disabled"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-				    <tr>
-				      <th scope="row"><time datetime="2017-03-15">03/15</time></th>
-				      <td>My Team - 2<br> vs <br>Oponent - 1</td>
-				      <td>Stadium ours</td>
-				      <td>Home</td>
-				      <td><a href="editgameBootstrap.html" class="disabled"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-				    </tr>
-				    </tr>
-				    <tr>
-				       <th scope="row"><time datetime="2017-04-15">04/15</time></th>
-				      <td>My Team - 3<br> vs <br>Oponent - 0</td>
-				      <td>Stadium ours</td>
-				      <td>Home</td>
-				      <td><a href="editgameBootstrap.html" class="disabled"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-				    <tr>
-				       <th scope="row"><time datetime="2017-05-15">07/15</time></th>
-				      <td>Oponent - 3<br>vs <br>My Team - 4</td>
-				      <td>Stadium theirs</td>
-				      <td>Away</td>
-				      <td><a href="editgameBootstrap.html" class="disabled"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-				    <tr style="color: red">
-				      <th scope="row"><time datetime="2017-06-15">Today!<br>011/15</time></th><!--Today's game -->
-				      <td>My Team -<br>vs <br>Oponent -</td>
-				      <td>Stadium ours</td>
-				      <td>Home</td>
-				      <td><a href="editgameBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-				    <tr>
-				      <th scope="row"><time datetime="2017-07-15">11/30</time></th>
-				      <td>Oponent -<br>vs <br>My Team -</td>
-				      <td>Stadium theirs</td>
-				      <td>Away</td>
-				      <td><a href="editgameBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-				    <tr>
-				       <th scope="row"><time datetime="2017-08-15">12-05</time></th>
-				      <td>My Team -<br> vs <br>Oponent -</td>
-				      <td>Stadium ours</td>
-				      <td>Home</td>
-				      <td><a href="editgameBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-				    <tr>
-				       <th scope="row"><time datetime="2017-12-15">12-15</time></th>
-				      <td>Oponent -<br>vs <br>My Team -</td>
-				      <td>Stadium theirs</td>
-				      <td>Away</td>
-				      <td><a href="editgameBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
+				  <tbody id="scheduleTable">
 				  </tbody>
 				</table>
 			</div>
@@ -171,12 +105,12 @@
 					<span class="glyphicon glyphicon-plus"></span>
 				</a>
 		
-				<a href="" type="button" class="btn btn-danger btn-sm">Delete Game
+				<button href="" type="button" class="btn btn-danger btn-sm" onclick="deleteGames()">Delete Game
 					<span class="glyphicon glyphicon-minus"></span>
-				</a>						
+				</button>						
 			</div>
 		</div>
 	</div>
-	
+	<script src="addgame.js"></script>
 </body>
 </html>
