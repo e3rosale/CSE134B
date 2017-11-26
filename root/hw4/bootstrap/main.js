@@ -70,7 +70,7 @@ function savePlayer(e) {
   document.getElementById('addPlayerForm').reset();
 
   //window.location.replace("http://stackoverflow.com");
-  window.location.href = '/rosterBootstrap.html';
+  window.location.href = '/hw4/bootstrap/rosterBootstrap.html';
 
   //e.preventDefault();
 }
