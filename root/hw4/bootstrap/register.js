@@ -42,7 +42,7 @@ function displayStorageContent() {
     var retrievedObject = registered_users.getItem(users);
     var user = JSON.parse(retrievedObject);
 
-    alert("first name: " + user.first_name + "<br>" + "last name: " + user.last_name + "<br>" + "email: " + user.email + "<br>" + "password: " + user.password + "<br>" + "type: " + user.type + "<br><br>");
+    alert("first name: " + user.first_name + " " + "last name: " + user.last_name + " " + "email: " + user.email + " " + "password: " + user.password + " " + "type: " + user.type);
   }
 }
 
