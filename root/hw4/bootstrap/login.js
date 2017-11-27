@@ -20,12 +20,16 @@ function login_user() {
         break;
       }
     }
-    if (email_registered && password_matched)
+    alert(email_registered);
+    alert(password_matched);
+    if (email_registered && password_matched) {
       window.location.replace("https://hw2-cse134b-3ffd9.firebaseapp.com/hw4/bootstrap/dashboardBootstrap.html");
-    else if (email_registered && !password_match)
+    } else if (email_registered && !password_match) {
       alert("password is incorrect");
-    else
+    } else {
       alert("email does not exist, please register");
+    }
+    alert("end of login function");
   }
 }
 
