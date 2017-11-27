@@ -41,7 +41,7 @@ function register_user() {
           document.write("password: " + user.password + "<br>");
           document.write("type: " + user.type + "<br><br>");
         }
-        window.location.replace("login.html");
+        window.location.replace("http://www.espn.com");
       }
     }
   }
