@@ -24,7 +24,7 @@ function login_user() {
     alert(password_matched);
     if (email_registered && password_matched) {
       window.location.replace("https://hw2-cse134b-3ffd9.firebaseapp.com/hw4/bootstrap/dashboardBootstrap.html");
-    } else if (email_registered && !password_match) {
+    } else if (email_registered && !password_matched) {
       alert("password is incorrect");
     } else {
       alert("email does not exist, please register");
