@@ -29,9 +29,10 @@ function register_user() {
         alert("Please make sure that password and confirmation password match");
       } else {
         // passwords match, proceed to create new registered user
-        var new_user = {first_name: user_first_name, last_name: user_last_name, email: user_email, password: user_password, type: user_type}
+        var new_user = {first_name : user_first_name, last_name : user_last_name, email : user_email, password : user_password, type : user_type};
         registered_users.setItem(new_user.email, JSON.stringify(new_user));
-        window.location.replace("http://www.espn.com");
+        alert("registration successful! Please login");
+        window.location.replace("https://hw2-cse134b-3ffd9.firebaseapp.com/hw4/bootstrap/loginBootstrap.html");
       }
     }
   }
@@ -42,7 +43,7 @@ function displayStorageContent() {
     var retrievedObject = registered_users.getItem(users);
     var user = JSON.parse(retrievedObject);
 
-    alert("{first name : " + user.first_name + ", " + "last name : " + user.last_name + ", " + "email : " + user.email + ", " + "password : " + user.password + ", " + "type : " + user.type + "}");
+    alert("{first_name : " + user.first_name + ", " + "last_name : " + user.last_name + ", " + "email : " + user.email + ", " + "password : " + user.password + ", " + "type : " + user.type + "}");
   }
 }
 
