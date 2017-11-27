@@ -18,6 +18,7 @@ function login_user() {
     if (!is_registered) {
       alert("This email is not registered, please proceed to register page");
     } else {
+      alert("about to replace");
       window.location.replace("dashboard.html");
     }
   }
