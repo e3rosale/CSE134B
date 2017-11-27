@@ -3,7 +3,6 @@ var registered_users = localStorage;
 function login_user() {
   var login_email = document.querySelector('#Email').value;
   var login_password = document.querySelector('#Password').value;
-
   if (login_email == "" || login_password == "") {
     alert("complete all form fields");
   } else {
@@ -12,7 +11,6 @@ function login_user() {
     for (users in registered_users) {
       var retrieved_user_object = registered_users.getItem(users);
       var user = JSON.parse(retrieved_user_object);
-      alert(user.first_name + " " + user.last_name + " " + user.email + " " + user.password);
       if (user.email == login_email) {
         email_registered = true;
         if (user.password == login_password)
@@ -20,16 +18,12 @@ function login_user() {
         break;
       }
     }
-    alert(email_registered);
-    alert(password_matched);
-    if (email_registered && password_matched) {
+    if (email_registered && password_matched)
       window.location.replace("https://hw2-cse134b-3ffd9.firebaseapp.com/hw4/bootstrap/dashboardBootstrap.html");
-    } else if (email_registered && !password_matched) {
+    else if (email_registered && !password_matched)
       alert("password is incorrect");
-    } else {
+    else
       alert("email does not exist, please register");
-    }
-    alert("end of login function");
   }
 }
 
