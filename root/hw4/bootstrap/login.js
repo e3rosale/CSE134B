@@ -18,7 +18,7 @@ function login_user() {
     if (!is_registered) {
       alert("This email is not registered, please proceed to register page");
     } else {
-      window.location.replace("https://hw2-cse134b-3ffd9.firebaseapp.com/hw4/bootstrap/registerBootstrap.html");
+      window.location.replace("https://hw2-cse134b-3ffd9.firebaseapp.com/hw4/bootstrap/dashboardBootstrap.html");
     }
   }
 }
