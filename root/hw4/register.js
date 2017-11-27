@@ -1,5 +1,4 @@
 var registered_users = localStorage;
-
 // register the user
 function register_user() {
   var user_first_name = document.querySelector('#register_first_name').value;
@@ -42,7 +41,7 @@ function register_user() {
           document.write("password: " + user.password + "<br>");
           document.write("type: " + user.type + "<br><br>");
         }
-        window.location.replace("login.html")
+        window.location.replace("login.html");
       }
     }
   }
