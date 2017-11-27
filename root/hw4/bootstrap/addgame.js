@@ -2,6 +2,8 @@
  * JavaScript to add game to local storage
  */
 
+
+// Global variables to get forms from new and updated games
 var gameToAdd = document.getElementById('gameForm');
 var gameToEdit = document.getElementById('editGameForm');
 var editThisGame = {};
@@ -17,7 +19,9 @@ if(gameToEdit !== null) {
 }
 
 
-// Function that saves the game to local storage
+/* 
+ * Function that saves a new game to the local storage
+ */
 function saveGame(e) {
 	//Getting values from form
 	var currOponent = document.getElementById('oponent').value;
@@ -54,10 +58,14 @@ function saveGame(e) {
 	//reseting form
 	gameToAdd.reset();
 	e.preventDefault();
+	window.location.href = './scheduleBootstrap.html';
 }
 
 
-//Function that fetches the schedule to the schedule page from the local storage
+
+/* 
+ * Fetches the current saved games to the schedule page on loading 
+ */
 function fetchSchedule() {
 
 	// Getting objects from local storage
@@ -86,7 +94,10 @@ function fetchSchedule() {
 	}
 }
 
-// Function to delete scheduled games
+
+/* 
+ * 	Gets all selected games from checkboxes and calls a function to delete them by id
+ */
 function deleteGames() {
 	var games = document.getElementsByName('games');
 
@@ -100,7 +111,9 @@ function deleteGames() {
 }
 
 
-// Function to delete an item by key
+/* 
+ * 	Deletes a games by id
+ */
 function deleteItemByKey(id) {
 	var schedule = JSON.parse(localStorage.getItem('schedule'));
   
@@ -115,7 +128,10 @@ function deleteItemByKey(id) {
 	localStorage.setItem('schedule', JSON.stringify(schedule));  
 }
 
-// Fuction that finds and saves the object to be edited
+
+/* 
+ * 	Gets the game to be edited and saves it to local storage
+ */
 function editGame(id) {
 	var schedule = JSON.parse(localStorage.getItem('schedule'));
 	for (let i = 0; i < schedule.length; i++) {
@@ -126,7 +142,10 @@ function editGame(id) {
 	}
 }
 
-// Function that populates the edit window
+
+/* 
+ *	Populates the edit page with the data of the game to be edited 
+ */
 function populateEdit() {
 	editThisGame = JSON.parse(localStorage.getItem('editGame'));	
 
@@ -143,7 +162,10 @@ function populateEdit() {
 	}
 }
 
-// Edits game from local storage
+
+/* 
+ * 	function that actually edits the editGame(selected game to be edited) from local storage.
+ */
 function editGameCurr(e) {
 	//Getting values from form
 	var currOponent = document.getElementById('oponentEdit').value;
@@ -177,6 +199,7 @@ function editGameCurr(e) {
 	//reseting form
 	gameToEdit.reset();
 	e.preventDefault();
+	window.location.href = './scheduleBootstrap.html';
 }
 
 

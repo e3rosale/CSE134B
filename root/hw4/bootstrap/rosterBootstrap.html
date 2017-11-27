@@ -41,7 +41,7 @@
 
 	</style>
 </head>
-<body onload="fetchRoster()" style="height: 100%">	
+<body style="height: 100%" onload="fetchRoster()">	
 	<nav class="navbar navbar-inverse fixed-top" style="background-color: #428bca;">
 			<div class="container-fluid">
 			<div class="navbar-header">
@@ -77,7 +77,7 @@
 		</div>
 
 		
-		<div class="row">
+		<div class="row" >
 			<div class="col-xs-12 col-sm-8 col-sm-offset-2">
 				<table class="table table-inverse" style="background-color: #428bca; color: white;">
 				  <thead>
@@ -86,121 +86,13 @@
 				      <th>Name</th>
 				      <th>Email</th>
 				      <th>Age</th>
-				      <th></th>
+				      <th>Position</th>
 				      <th>Edit</th>
 				      <th><span class="glyphicon glyphicon-trash"></span></th>
 				    </tr>
 				  </thead>
 				  <tbody id="rosterList">
-					<!--	<div id="rosterList"> </div> -->
-        		
-      		
-
-
-
-
-				  	<!--
-				    <tr>
-				      <th scope="row">1</th>
-				      <td>Kevin Trapp</td>
-				      <td>0</td>
-				      <td>0</td>
-				      <td>0</td>
-				      <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">2</th>
-				      <td>Thiago Silva</td>
-				      <td>0</td>
-				      <td>1</td>
-				      <td>0</td>
-				      <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">3</th>
-				      <td>Presnel Kimpembe</td>
-				      <td>0</td>
-				      <td>3</td>
-				      <td>0</td>
-				      <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">5</th>
-				      <td>Marquinhos</td>
-				      <td>0</td>
-				      <td>1</td>
-				      <td>0</td>
-				      <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">6</th>
-				      <td>Marco Veratti</td>
-				      <td>0</td>
-				      <td>2</td>
-				      <td>1</td>
-				     <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">7</th>
-				      <td>Lucas Moura</td>
-				      <td>1</td>
-				      <td>1</td>
-				      <td>0</td>
-				     <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">8</th>
-				      <td>Thiago Motta</td>
-				      <td>1</td>
-				      <td>2</td>
-				      <td>0</td>
-				     <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">9</th>
-				      <td>Edinson Cavani</td>
-				      <td>13</td>
-				      <td>0</td>
-				      <td>0</td>
-				      <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">10</th>
-				      <td>Neymar</td>
-				      <td>7</td>
-				      <td>2</td>
-				      <td>1</td>
-				     <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">11</th>
-				      <td>Angel Di Maria</td>
-				      <td>0</td>
-				      <td>0</td>
-				      <td>0</td>
-				      <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-				    <tr>
-				      <th scope="row">29</th>
-				      <td>Kylian Mbappe</td>
-				      <td>4</td>
-				      <td>2</td>
-				      <td>0</td>
-				      <td><a href="editplayerBootstrap.html"><span class="glyphicon glyphicon-pencil"></span></a></td>
-				      <td><input type="checkbox" name="" id=""></td>
-				    </tr>
-
-				-->
+					<!-- Roster dynamically allocated from memory goes here -->
 				  </tbody>
 				</table>
 			</div>
@@ -211,9 +103,9 @@
 					<span class="glyphicon glyphicon-plus"></span>
 				</a>
 		
-				<a href="" type="button" class="btn btn-danger btn-sm">Delete Player
+				<button href="" type="button" class="btn btn-danger btn-sm" onclick="deletePlayers()">Delete Player(s)
 					<span class="glyphicon glyphicon-minus"></span>
-				</a>						
+				</button>						
 			</div>
 		</div>
 	</div>

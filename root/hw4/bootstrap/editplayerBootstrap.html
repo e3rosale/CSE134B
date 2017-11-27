@@ -48,46 +48,65 @@
 		.dropdown-menu {width: 100%;}
 	</style>
 </head>
-<body onload="renderEditForm()" style="height: 100%" class="adjust">
+<body style="height: 100%" class="adjust" onload="populatePlayerEdit()">
+	<header class="container-fluid bg-primary" style="padding-bottom: 1em">
+		<div class="row align-items-center">
+			<div class="col-xs-12 text-center">
+				<p class="h1" style="font-family: 'Pacifico', cursive;">TeamWatch</p>
+			</div>
+		</div>
+	</header>
 	
-		<div class="container-fluid" style="margin-top: 2em; min-height: 50%;">
-			<div class="row align-items-center" style="margin-top: 4em; ">
-				<div class="col-sm-offset-4 col-xs-offset-1 col-sm-4 col-xs-10" style="border: 1px solid black; min-height: 100%;">
-				<form id = "editPlayerForm" style="margin-top: 1em; margin-bottom: 1em;" action="https://hw2-cse134b-3ffd9.firebaseapp.com/hw4/bootstrap/rosterBootstrap.html">
-			 <!--	<editPlayerTag id="editList"> -->
-					<!--
+
+	<div class="container-fluid" style="margin-top: 2em; min-height: 50%;">
+		<div class="row align-items-center" style="margin-top: 4em; ">
+			<div class="col-sm-offset-4 col-xs-offset-1 col-sm-4 col-xs-10 bg-primary text-center">
+				<p class="h2">Edit Player<span class="glyphicon glyphicon-pencil" aria-hidden="true" style="padding-left: 1em;"></span></p>
+			</div>
+
+			<div class="col-sm-offset-4 col-xs-offset-1 col-sm-4 col-xs-10" style="border: 1px solid black; min-height: 100%;">
+				<div class="well well-sm">
+					<span class="adjust">
+						 	<a href=""><i class="glyphicon glyphicon-pencil pull-right" style="color: black"></i></a>
+					</span>
+					<img src="./../../face.jfif" class="img-responsive center-block" style="padding-top: 0.5em">
+				</div>	
+				<form style="margin-top: 1em; margin-bottom: 1em;" id="editPlayerForm" action="./rosterBootstrap.html">
 					<div class="form-group">
-			    		<label for="name">Name</label>
-			    		<input type="text" class="form-control" id="nameEdit" value="">
+			    		<label for="fname">First Name</label>
+			    		<input type="text" class="form-control" id="playerFNameEdit" >
+			  		</div>
+			  		<div class="form-group">
+			    		<label for="lname">Last Name</label>
+			    		<input type="text" class="form-control" id="playerLNameEdit" >
 			  		</div>
 			  		<div class="form-group">
 			    		<label for="email">Email address</label>
-			    		<input type="text" class="form-control" id="emailEdit" value="">
+			    		<input type="email" class="form-control" id="playerEmailEdit" >
 			  		</div>			  		
 			  		<div class="form-group">
-			    		<label for="date">Age</label>
-			    		<input type="text" class="form-control" id="ageEdit" value="">
+			    		<label for="date">Date of Birth</label>
+			    		<input type="date" class="form-control" id="playerDobEdit">
 			  		</div>
 			  		<div class="form-group">
 			    		<label for="jersey">Jersey #</label>
-			    		<input type="text" class="form-control" id="jerseyEdit" value="">
+			    		<input type="number" class="form-control Password" id="playerJerseyEdit">
 			  		</div>
 			  		<div class="form-group dropdown">
-							<label for="positionInput">Position</label>
-							<select id="positionEdit" class="form-control">
-			
-								<option value="GoalKeeper">GoalKeeper</option>
-								<option value="Defense">Defense</option>
-								<option value="MidField">MidField</option>
-								<option value="Forward">Forward</option>
-							</select>
-					</div> -->
-				<!--</editPlayerTag>  -->
-				<!--
-					<br>
-					<button type="submit" class="btn btn-success">Update</button>
-    				    <a class="btn btn-danger" type="button" value="Cancel" href="./rosterBootstrap.html" onclick="onCancel()">Cancel</a>
-				</form> -->
+						<label for="playerPosition">Position</label>
+						<select id="playerPositionEdit" class="form-control">
+							<option value="GoalKeeper">GoalKeeper</option>
+							<option value="Defense">Defense</option>
+							<option value="MidField">MidField</option>
+							<option value="Forward">Forward</option>
+						</select>
+					</div>
+			  		<div class="checkbox">
+      					<label><input type="checkbox" value="" id="playerCaptainEdit" checked="isCaptain();">Captain</label>
+    				</div>
+    				<br><input class="btn btn-success" type="submit" value="Update"></input>
+    				    <a class="btn btn-danger" type="button" value="cancel" href="./rosterBootstrap.html">Cancel</a>
+				</form>
 			</div>
 		</div>
 	</div>
