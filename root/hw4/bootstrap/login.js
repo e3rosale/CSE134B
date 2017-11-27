@@ -12,7 +12,7 @@ function login_user() {
     for (users in registered_users) {
       var retrieved_user_object = registered_users.getItem(users);
       var user = JSON.parse(retrieved_user_object);
-      alert(user.first_name + " " + user.last_name + " " + user.password + " " + user.password + "<br>");
+      alert(user.first_name + " " + user.last_name + " " + user.email + " " + user.password);
       if (user.email == login_email) {
         email_registered = true;
         if (user.password == login_password)
