@@ -19,7 +19,7 @@ function login_user() {
       alert("This email is not registered, please proceed to register page");
     } else {
       alert("about to replace");
-      window.location.replace("https://www.w3schools.com");
+      window.location.replace("https://hw2-cse134b-3ffd9.firebaseapp.com/hw4/bootstrap/registerBootstrap.html");
     }
   }
 }
