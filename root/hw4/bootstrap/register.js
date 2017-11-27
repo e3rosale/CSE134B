@@ -7,7 +7,6 @@ function register_user() {
   var user_password = document.querySelector('#register_password').value;
   var user_confirm_password = document.querySelector('#confirm_register_password').value;
   var user_type = "player";
-
   // check to see if any form field is empty
   if (user_first_name == "" || user_last_name == "" || user_email == "" || user_password == "" || user_confirm_password == "") {
     alert("Please make sure to fill out all form fields");
@@ -15,7 +14,6 @@ function register_user() {
     // check to see if user email is already registered
     var email_exists = false;
     for (users in registered_users) {
-      alert(users);
       if (users == user_email) {
         email_exists = true;
         break;
@@ -46,8 +44,6 @@ function displayStorageContent() {
     alert("{first_name : " + user.first_name + ", " + "last_name : " + user.last_name + ", " + "email : " + user.email + ", " + "password : " + user.password + ", " + "type : " + user.type + "}");
   }
 }
-
-displayStorageContent();
 
 window.addEventListener('DOMContentLoaded', function() {
   document.querySelector('#register_button').addEventListener('click', function () {register_user();}, false);
