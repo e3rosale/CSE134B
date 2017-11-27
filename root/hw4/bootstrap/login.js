@@ -23,7 +23,10 @@ function login_user() {
     }
   }
 }
+function hello_world() {
+  alert("Hello world!");
+}
 
 window.addEventListener('DOMContentLoaded', function() {
-  document.querySelector('#login_button').addEventListener('click', function() {login_user();}, false);
+  document.querySelector('#login_button').addEventListener('click', function() {hello_world();}, false);
 }, false);
