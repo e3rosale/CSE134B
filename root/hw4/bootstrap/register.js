@@ -15,8 +15,9 @@ function register_user() {
     // check to see if user email is already registered
     var email_exists = false;
     for (users in registered_users) {
+      alert(users);
       if (users == user_email) {
-        email_exists= true;
+        email_exists = true;
         break;
       }
     }
