@@ -30,24 +30,22 @@ function register_user() {
         // passwords match, proceed to create new registered user
         var new_user = {first_name: user_first_name, last_name: user_last_name, email: user_email, password: user_password, type: user_type}
         registered_users.setItem(new_user.email, JSON.stringify(new_user));
-
-        for (users in registered_users) {
-          var retrievedObject = registered_users.getItem(users);
-          var user = JSON.parse(retrievedObject);
-
-          document.write("first name: " + user.first_name + "<br>");
-          document.write("last name: " + user.last_name + "<br>");
-          document.write("email: " + user.email + "<br>");
-          document.write("password: " + user.password + "<br>");
-          document.write("type: " + user.type + "<br><br>");
-        }
         window.location.replace("http://www.espn.com");
       }
     }
   }
 }
 
+function displayStorageContent() {
+  for (users in registered_users) {
+    var retrievedObject = registered_users.getItem(users);
+    var user = JSON.parse(retrievedObject);
 
+    alert("first name: " + user.first_name + "<br>" + "last name: " + user.last_name + "<br>" + "email: " + user.email + "<br>" + "password: " + user.password + "<br>" + "type: " + user.type + "<br><br>");
+  }
+}
+
+displayStorageContent();
 
 window.addEventListener('DOMContentLoaded', function() {
   document.querySelector('#register_button').addEventListener('click', function () {register_user();}, false);
