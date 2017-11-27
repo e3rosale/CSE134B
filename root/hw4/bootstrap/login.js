@@ -1,7 +1,7 @@
 var registered_users = localStorage;
 function login_user() {
-  var login_email = document.querySelector('#login_email').value;
-  var login_password = document.querySelector('#login_password').value;
+  var login_email = document.querySelector('#Email').value;
+  var login_password = document.querySelector('#Password').value;
 
   if (login_email == "" || login_password == "") {
     alert("complete all form fields");
@@ -19,7 +19,7 @@ function login_user() {
       alert("This email is not registered, please proceed to register page");
     } else {
       alert("about to replace");
-      window.location.replace("dashboard.html");
+      window.location.replace("https://www.w3schools.com");
     }
   }
 }
