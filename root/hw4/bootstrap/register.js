@@ -6,7 +6,7 @@ function register_user() {
   var user_email = document.querySelector('#Email').value;
   var user_password = document.querySelector('#register_password').value;
   var user_confirm_password = document.querySelector('#confirm_register_password').value;
-  var user_type = "player";
+  var user_type = document.querySelector('input[name="userType"]:checked').value;
   // check to see if any form field is empty
   if (user_first_name == "" || user_last_name == "" || user_email == "" || user_password == "" || user_confirm_password == "") {
     alert("Please make sure to fill out all form fields");
@@ -40,7 +40,6 @@ function displayStorageContent() {
   for (users in registered_users) {
     var retrievedObject = registered_users.getItem(users);
     var user = JSON.parse(retrievedObject);
-
     alert("{first_name : " + user.first_name + ", " + "last_name : " + user.last_name + ", " + "email : " + user.email + ", " + "password : " + user.password + ", " + "type : " + user.type + "}");
   }
 }
