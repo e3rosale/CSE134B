@@ -8,11 +8,19 @@ function displayStorageContent() {
   }
 }
 
-function displayCurrentUser() {
+function displayUserSettings() {
   var current_user_email = registered_users.getItem("current_user");
-  alert("before");
-  alert("The current user email is: " + current_user_email);
-  alert("after");
+  var retrievedObject = registered_users.getItem(current_user_email);
+  var current_user = JSON.parse(retrievedObject);
+  document.querySelector('#setting_first_name').value = current_user.first_name;
+  document.querySelector('#setting_last_name').value = current_user.last_name;
+  document.querySelector('#setting_email').value = current_user.email;
+  document.querySelector('#setting_password').value = current_user.password;
 }
 
-window.addEventListener('DOMContentLoaded', function() {displayCurrentUser();}, false);
+window.addEventListener('DOMContentLoaded', function() {displayUserSettings();}, false);
+//id="setting_first_name"
+//id="setting_last_name"
+//id="setting_email"
+//id="setting_password"
+//id="setting_phone_number"
