@@ -10,7 +10,9 @@ function displayStorageContent() {
 
 function displayCurrentUser() {
   var current_user_email = registered_users.getItem("current_user");
+  alert("before");
   alert("The current user email is: " + current_user_email);
+  alert("after");
 }
 
 window.addEventListener('DOMContentLoaded', function() {displayCurrentUser();}, false);
