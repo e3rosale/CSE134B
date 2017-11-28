@@ -8,4 +8,9 @@ function displayStorageContent() {
   }
 }
 
-window.addEventListener('DOMContentLoaded', function() {displayStorageContent();}, false);
+function displayCurrentUser() {
+  var current_user_email = registered_users.getItem("current_user");
+  alert("The current user email is: " + current_user_email);
+}
+
+window.addEventListener('DOMContentLoaded', function() {displayCurrentUser();}, false);
