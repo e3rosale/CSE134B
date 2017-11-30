@@ -2,11 +2,7 @@ var registered_users = localStorage;
 
 function return_person_object_literal() {
   var current_user_email = registered_users.getItem("current_user");
-  alert("The current user value is: " + current_user_email);
   var retrievedObject = registered_users.getItem(current_user_email);
-  for (users in registered_users) {
-    alert(users);
-  }
   return JSON.parse(retrievedObject);
 }
 
@@ -65,7 +61,7 @@ window.addEventListener('DOMContentLoaded', function() {
   document.querySelector('#save_button').addEventListener('click', function() {updateUserSettings();}, false);
 }, false);
 
-
+/*
 function displayStorageContent() {
   for (users in registered_users) {
     var retrievedObject = registered_users.getItem(users);
@@ -73,3 +69,4 @@ function displayStorageContent() {
     alert("{first_name : " + user.first_name + ", " + "last_name : " + user.last_name + ", " + "email : " + user.email + ", " + "password : " + user.password + ", " + "type : " + user.type + "}");
   }
 }
+*/
