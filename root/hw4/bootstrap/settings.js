@@ -18,7 +18,6 @@ function updateUserSettings() {
     alert("Please fill in all form fields. Telephone number is optional");
   } else  {
     // if the user email is unchanged, update the rest of the fields
-
     if (updated_email != current_user_email) {
       // user email is updated, so we now check persistent storage to make sure that the email is not already taken
       var email_exists = false;
@@ -38,23 +37,29 @@ function updateUserSettings() {
         alert("User settings have been updated successfully!");
       }
     }
+    if (updated_phone_number == null) {
+      updated_phone_number = "";  
+    }
     var current_user = return_person_object_literal();
-    var update_user = {first_name : updated_first_name, last_name : updated_last_name, email : update_email, password : updated_password, type : current_user.type, phone : updated_phone_number};
+    var update_user = {first_name : updated_first_name, last_name : updated_last_name, email : updated_email, password : updated_password, type : current_user.type, phone : updated_phone_number};
     registered_users.setItem(update_user.email, JSON.stringify(update_user));
   }
 }
 
 function displayUserSettings() {
-  var current_user = returnPersonObject();
+  var current_user = return_person_object_literal();
   document.querySelector('#setting_first_name').value = current_user.first_name;
   document.querySelector('#setting_last_name').value = current_user.last_name;
   document.querySelector('#setting_email').value = current_user.email;
   document.querySelector('#setting_password').value = current_user.password;
   // bind all button elements to respective functions
-  document.querySelector('save_button').addEventListener('click', function() {updateUserSettings()};, false);
+
 }
 
-window.addEventListener('DOMContentLoaded', function() {displayUserSettings();}, false);
+window.addEventListener('DOMContentLoaded', function() {
+  displayUserSettings();
+  document.querySelector('#save_button').addEventListener('click', function() {updateUserSettings();}, false);
+}, false);
 
 /*
 function displayStorageContent() {

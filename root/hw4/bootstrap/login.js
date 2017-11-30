@@ -19,7 +19,7 @@ function login_user() {
       }
     }
     if (email_registered && password_matched) {
-      registered_users.setItem("current_user", login_email);
+      registered_users.setItem("current_user", JSON.stringify(login_email));
       window.location.replace("https://hw2-cse134b-3ffd9.firebaseapp.com/hw4/bootstrap/dashboardBootstrap.html");
     } else if (email_registered && !password_matched) {
       alert("password is incorrect");
