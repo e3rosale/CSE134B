@@ -2,7 +2,11 @@ var registered_users = localStorage;
 
 function return_person_object_literal() {
   var current_user_email = registered_users.getItem("current_user");
+  alert("The current user value is: " + current_user_email);
   var retrievedObject = registered_users.getItem(current_user_email);
+  for (users in registered_users) {
+    alert(users);
+  }
   return JSON.parse(retrievedObject);
 }
 
@@ -38,7 +42,7 @@ function updateUserSettings() {
       }
     }
     if (updated_phone_number == null) {
-      updated_phone_number = "";  
+      updated_phone_number = "";
     }
     var current_user = return_person_object_literal();
     var update_user = {first_name : updated_first_name, last_name : updated_last_name, email : updated_email, password : updated_password, type : current_user.type, phone : updated_phone_number};
@@ -61,7 +65,7 @@ window.addEventListener('DOMContentLoaded', function() {
   document.querySelector('#save_button').addEventListener('click', function() {updateUserSettings();}, false);
 }, false);
 
-/*
+
 function displayStorageContent() {
   for (users in registered_users) {
     var retrievedObject = registered_users.getItem(users);
@@ -69,4 +73,3 @@ function displayStorageContent() {
     alert("{first_name : " + user.first_name + ", " + "last_name : " + user.last_name + ", " + "email : " + user.email + ", " + "password : " + user.password + ", " + "type : " + user.type + "}");
   }
 }
-*/
