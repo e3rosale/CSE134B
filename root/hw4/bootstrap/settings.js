@@ -39,6 +39,7 @@ function updateUserSettings() {
     }
     if (updated_phone_number == null) {
       updated_phone_number = "";
+      alert("phone value was null, now it is empty string");
     }
     var current_user = return_person_object_literal();
     var update_user = {first_name : updated_first_name, last_name : updated_last_name, email : updated_email, password : updated_password, type : current_user.type, phone : updated_phone_number};
@@ -52,6 +53,8 @@ function displayUserSettings() {
   document.querySelector('#setting_last_name').value = current_user.last_name;
   document.querySelector('#setting_email').value = current_user.email;
   document.querySelector('#setting_password').value = current_user.password;
+  document.querySelector('#setting_telephone').value = current_user.phone;
+
   // bind all button elements to respective functions
 
 }

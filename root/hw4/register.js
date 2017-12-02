@@ -6,7 +6,7 @@ function register_user() {
   var user_email = document.querySelector('#register_email').value;
   var user_password = document.querySelector('#register_password').value;
   var user_confirm_password = document.querySelector('#confirm_register_password').value;
-   var user_type = "player";
+  var user_type = "player";
 
   // check to see if any form field is empty
   if (user_first_name == "" || user_last_name == "" || user_email == "" || user_password == "" || user_confirm_password == "") {
