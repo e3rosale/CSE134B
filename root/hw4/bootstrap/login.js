@@ -9,13 +9,15 @@ function login_user() {
     var email_registered = false;
     var password_matched = false;
     for (users in registered_users) {
-      var retrieved_user_object = registered_users.getItem(users);
-      var user = JSON.parse(retrieved_user_object);
-      if (user.email == login_email) {
-        email_registered = true;
-        if (user.password == login_password)
-          password_matched = true;
-        break;
+      if (users != "current_user") {
+        var retrieved_user_object = registered_users.getItem(users);
+        var user = JSON.parse(retrieved_user_object);
+        if (user.email == login_email) {
+          email_registered = true;
+          if(user.password == login_password)
+            password_matched = true;
+          break;
+        }
       }
     }
     if (email_registered && password_matched) {
