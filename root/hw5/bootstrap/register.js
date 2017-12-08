@@ -28,6 +28,12 @@ function register_user() {
         alert("Please make sure that password and confirmation password match");
       } else {
         // passwords match, proceed to create new registered user
+        firebase.auth().createUserWithEmailAndPassword(user_email, user_password).catch(function(error) {
+        // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+        });
+        
         var new_user = {first_name : user_first_name, last_name : user_last_name, email : user_email, password : user_password, type : user_type, phone : user_phone_number};
         registered_users.setItem(new_user.email, JSON.stringify(new_user));
         alert("registration successful! Please login");

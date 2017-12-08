@@ -21,6 +21,11 @@ function login_user() {
       }
     }
     if (email_registered && password_matched) {
+      firebase.auth().signInWithEmailAndPassword(login_email, login_password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+      });
       registered_users.setItem("current_user", login_email);
       window.location.replace("https://hw2-cse134b-3ffd9.firebaseapp.com/hw4/bootstrap/dashboardBootstrap.html");
     } else if (email_registered && !password_matched) {
