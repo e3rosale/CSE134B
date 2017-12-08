@@ -27,7 +27,7 @@ function login_user() {
         var errorMessage = error.message;
       });
       registered_users.setItem("current_user", login_email);
-      window.location.replace("https://hw2-cse134b-3ffd9.firebaseapp.com/hw4/bootstrap/dashboardBootstrap.html");
+      window.location.replace("https://hw2-cse134b-3ffd9.firebaseapp.com/hw5/bootstrap/dashboardBootstrap.html");
     } else if (email_registered && !password_matched) {
       alert("password is incorrect");
     } else {
