@@ -33,11 +33,11 @@ function register_user() {
           var errorCode = error.code;
           var errorMessage = error.message;
         });
-        
+
         var new_user = {first_name : user_first_name, last_name : user_last_name, email : user_email, password : user_password, type : user_type, phone : user_phone_number};
         registered_users.setItem(new_user.email, JSON.stringify(new_user));
         alert("registration successful! Please login");
-        window.location.replace("https://hw2-cse134b-3ffd9.firebaseapp.com/hw4/bootstrap/loginBootstrap.html");
+        window.location.replace("https://hw2-cse134b-3ffd9.firebaseapp.com/hw5/bootstrap/loginBootstrap.html");
       }
     }
   }
