@@ -35,21 +35,23 @@ function register_user() {
           var errorMessage = error.message;
         });
 
-        db.collection("users").add({
-          first_name : user_first_name,
-          last_name : user_last_name,
-          email : user_email,
-          password : user_password,
-          type : user_type,
-          phone : user_phone_number
-        })
-        .then(function(docRef) {
-          console.log("Document written with ID: ", docRef.id);
-        })
-        .catch(function(error) {
-          console.error("Error adding document: ", error);
-          alert("Error writing to firestore");
-        });
+        var citiesRef = db.collection("cities");
+
+        citiesRef.doc("SF").set({
+           name: "San Francisco", state: "CA", country: "USA",
+           capital: false, population: 860000 });
+        citiesRef.doc("LA").set({
+          name: "Los Angeles", state: "CA", country: "USA",
+          capital: false, population: 3900000 });
+        citiesRef.doc("DC").set({
+          name: "Washington, D.C.", state: null, country: "USA",
+          capital: true, population: 680000 });
+        citiesRef.doc("TOK").set({
+          name: "Tokyo", state: null, country: "Japan",
+          capital: true, population: 9000000 });
+        citiesRef.doc("BJ").set({
+          name: "Beijing", state: null, country: "China",
+          capital: true, population: 21500000 });
 
         var new_user = {first_name : user_first_name, last_name : user_last_name, email : user_email, password : user_password, type : user_type, phone : user_phone_number};
         registered_users.setItem(new_user.email, JSON.stringify(new_user));

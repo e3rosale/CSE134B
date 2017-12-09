@@ -1,4 +1,5 @@
 var registered_users = localStorage;
+var db = firebase.firestore();
 
 function login_user() {
   var login_email = document.querySelector('#Email').value;
@@ -27,6 +28,18 @@ function login_user() {
         var errorMessage = error.message;
       });
       registered_users.setItem("current_user", login_email);
+      // print out all of the contents from firestore
+      var docRef = db.collection("cities").doc("SF");
+
+      docRef.get().then(function(doc) {
+        if (doc.exists) {
+          console.log("Document data:", doc.data());
+        } else {
+          console.log("No such document!");
+        }
+      }).catch(function(error) {
+        console.log("Error getting document:", error);
+      });
       window.location.replace("https://hw2-cse134b-3ffd9.firebaseapp.com/hw5/bootstrap/dashboardBootstrap.html");
     } else if (email_registered && !password_matched) {
       alert("password is incorrect");
