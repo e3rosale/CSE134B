@@ -39,7 +39,7 @@ function register_user() {
           first_name : user_first_name,
           last_name : user_last_name,
           email : user_email,
-          password: user_password,
+          password : user_password,
           type : user_type,
           phone : user_phone_number
         })
@@ -48,6 +48,7 @@ function register_user() {
         })
         .catch(function(error) {
           console.error("Error adding document: ", error);
+          alert("Error writing to firestore");
         });
 
         var new_user = {first_name : user_first_name, last_name : user_last_name, email : user_email, password : user_password, type : user_type, phone : user_phone_number};
