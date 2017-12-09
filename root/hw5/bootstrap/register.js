@@ -1,4 +1,5 @@
 var registered_users = localStorage;
+var db = firebase.firestore();
 // register the user
 function register_user() {
   var user_first_name = document.querySelector('#Fname').value;
@@ -32,6 +33,21 @@ function register_user() {
         // Handle Errors here.
           var errorCode = error.code;
           var errorMessage = error.message;
+        });
+
+        db.collection("users").add({
+          first_name : user_first_name,
+          last_name : user_last_name,
+          email : user_email,
+          password: user_password,
+          type : user_type,
+          phone : user_phone_number
+        })
+        .then(function(docRef) {
+          console.log("Document written with ID: ", docRef.id);
+        })
+        .catch(function(error) {
+          console.error("Error adding document: ", error);
         });
 
         var new_user = {first_name : user_first_name, last_name : user_last_name, email : user_email, password : user_password, type : user_type, phone : user_phone_number};
