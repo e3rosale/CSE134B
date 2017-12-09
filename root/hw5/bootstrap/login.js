@@ -1,6 +1,10 @@
 var registered_users = localStorage;
 var db = firebase.firestore();
 
+const firebase = require("firebase");
+// Required for side-effects
+require("firebase/firestore");
+
 function login_user() {
   var login_email = document.querySelector('#Email').value;
   var login_password = document.querySelector('#Password').value;
