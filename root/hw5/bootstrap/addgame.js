@@ -21,7 +21,7 @@ var gameToEdit = document.getElementById('editGameForm');
 var editThisGame = {};
 var homeBoolean = false;
 var awayBoolean = false;
-var db;
+// var db;
 
 if(gameToAdd !== null) {
 	gameToAdd.addEventListener('submit', saveGame, false);
@@ -64,12 +64,18 @@ function saveGame(e) {
 	}
 
 	//Creating object to store in database
-	db.collection('games').set({
+	db.collection('games').doc(gameId).set({
 		oponent: currOponent,
 		location: currLocation,
 		date: currDate,
 		status: currStatusValue, 
 		id: gameId 
+	})
+	.then(function() {
+		console.log('Success');
+	})
+	.catch(function(error) {
+		console.error(error);
 	});
 
 	//reseting form
@@ -219,9 +225,9 @@ function editGameCurr(e) {
 	window.location.href = './scheduleBootstrap.html';
 }
 
-function setDB(app) {
-	db = app;
-}
+// function setDB(app) {
+// 	db = app;
+// }
 
 
 
