@@ -8,7 +8,6 @@ var config = {
 };
 firebase.initializeApp(config);
 var db = firebase.firestore();
-var docRef = db.collection("cities").doc("SF");
 
 var registered_users = localStorage;
 
@@ -41,9 +40,9 @@ function login_user() {
       registered_users.setItem("current_user", login_email);
       // print out all of the contents from firestore
 
-      docRef.get().then(function(doc) {
+      db.collecion("cities").get().then(function(doc) {
         if (doc.exists) {
-          console.log("Document data:", doc.data());
+          console.log("Document data:", db.collection("cities").data());
         } else {
           console.log("No such document!");
         }

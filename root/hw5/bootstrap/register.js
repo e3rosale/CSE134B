@@ -9,20 +9,36 @@ var config = {
 firebase.initializeApp(config);
 
 var db = firebase.firestore();
-var citiesRef = db.collection("cities");
+//var citiesRef = db.collection("cities");
 var registered_users = localStorage;
 
+var user_first_name;
+var user_last_name;
+var user_email;
+var user_password;
+var user_confirm_password;
+var user_type;
+var user_phone_number;
 
+
+
+db.collection("users").add({
+   first_name: "",
+   last_name: "",
+   email: "",
+   password: "",
+   type: "",
+   phone: ""});
 
 // register the user
 function register_user() {
-  var user_first_name = document.querySelector('#Fname').value;
-  var user_last_name = document.querySelector('#Lname').value;
-  var user_email = document.querySelector('#Email').value;
-  var user_password = document.querySelector('#register_password').value;
-  var user_confirm_password = document.querySelector('#confirm_register_password').value;
-  var user_type = document.querySelector('input[name="userType"]:checked').value;
-  var user_phone_number = "000-000-0000";
+  user_first_name = document.querySelector('#Fname').value;
+  user_last_name = document.querySelector('#Lname').value;
+  user_email = document.querySelector('#Email').value;
+  user_password = document.querySelector('#register_password').value;
+  user_confirm_password = document.querySelector('#confirm_register_password').value;
+  user_type = document.querySelector('input[name="userType"]:checked').value;
+  user_phone_number = "000-000-0000";
   // check to see if any form field is empty
   if (user_first_name == "" || user_last_name == "" || user_email == "" || user_password == "" || user_confirm_password == "") {
     alert("Please make sure to fill out all form fields");
@@ -48,23 +64,13 @@ function register_user() {
           var errorCode = error.code;
           var errorMessage = error.message;
         });
-
-        citiesRef.doc("SF").set({
-           name: "San Francisco", state: "CA", country: "USA",
-           capital: false, population: 860000 });
-        citiesRef.doc("LA").set({
-          name: "Los Angeles", state: "CA", country: "USA",
-          capital: false, population: 3900000 });
-        citiesRef.doc("DC").set({
-          name: "Washington, D.C.", state: null, country: "USA",
-          capital: true, population: 680000 });
-        citiesRef.doc("TOK").set({
-          name: "Tokyo", state: null, country: "Japan",
-          capital: true, population: 9000000 });
-        citiesRef.doc("BJ").set({
-          name: "Beijing", state: null, country: "China",
-          capital: true, population: 21500000 });
-
+        db.collection("users").add({
+           first_name: user_first_name,
+           last_name: user_last_name,
+           email: user_email,
+           password: user_password,
+           type: user_type,
+           phone: user_phone_number});
         var new_user = {first_name : user_first_name, last_name : user_last_name, email : user_email, password : user_password, type : user_type, phone : user_phone_number};
         registered_users.setItem(new_user.email, JSON.stringify(new_user));
         alert("registration successful! Please login");
