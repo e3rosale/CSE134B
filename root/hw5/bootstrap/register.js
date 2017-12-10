@@ -22,13 +22,22 @@ var user_phone_number;
 
 
 
-db.collection("users").add({
+db.collection("users").doc("null").set({
    first_name: "",
    last_name: "",
    email: "",
    password: "",
    type: "",
-   phone: ""});
+   phone: ""
+});
+
+db.collection("users").doc("null").delete().then(function() {
+    console.log("Document successfully deleted!");
+}).catch(function(error) {
+    console.error("Error removing document: ", error);
+});
+
+
 
 // register the user
 function register_user() {
@@ -64,13 +73,14 @@ function register_user() {
           var errorCode = error.code;
           var errorMessage = error.message;
         });
-        db.collection("users").add({
+        db.collection("users").doc(user_email).set({
            first_name: user_first_name,
            last_name: user_last_name,
            email: user_email,
            password: user_password,
            type: user_type,
-           phone: user_phone_number});
+           phone: user_phone_number
+         });
         var new_user = {first_name : user_first_name, last_name : user_last_name, email : user_email, password : user_password, type : user_type, phone : user_phone_number};
         registered_users.setItem(new_user.email, JSON.stringify(new_user));
         alert("registration successful! Please login");

@@ -40,15 +40,6 @@ function login_user() {
       registered_users.setItem("current_user", login_email);
       // print out all of the contents from firestore
 
-      db.collecion("cities").get().then(function(doc) {
-        if (doc.exists) {
-          console.log("Document data:", db.collection("cities").data());
-        } else {
-          console.log("No such document!");
-        }
-      }).catch(function(error) {
-        console.log("Error getting document:", error);
-      });
       window.location.replace("https://hw2-cse134b-3ffd9.firebaseapp.com/hw5/bootstrap/dashboardBootstrap.html");
     } else if (email_registered && !password_matched) {
       alert("password is incorrect");
