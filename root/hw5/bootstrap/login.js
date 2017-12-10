@@ -1,5 +1,16 @@
-var registered_users = localStorage;
+var config = {
+  apiKey: "AIzaSyBHPFZ_lh_iNcTNJSgZlbEku1DQdNnJ-mg",
+  authDomain: "hw2-cse134b-3ffd9.firebaseapp.com",
+  databaseURL: "https://hw2-cse134b-3ffd9.firebaseio.com",
+  projectId: "hw2-cse134b-3ffd9",
+  storageBucket: "hw2-cse134b-3ffd9.appspot.com",
+  messagingSenderId: "525755574970"
+};
+firebase.initializeApp(config);
 var db = firebase.firestore();
+var docRef = db.collection("cities").doc("SF");
+
+var registered_users = localStorage;
 
 function login_user() {
   var login_email = document.querySelector('#Email').value;
@@ -29,7 +40,6 @@ function login_user() {
       });
       registered_users.setItem("current_user", login_email);
       // print out all of the contents from firestore
-      var docRef = db.collection("cities").doc("SF");
 
       docRef.get().then(function(doc) {
         if (doc.exists) {

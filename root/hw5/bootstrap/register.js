@@ -1,5 +1,17 @@
-var registered_users = localStorage;
+var config = {
+  apiKey: "AIzaSyBHPFZ_lh_iNcTNJSgZlbEku1DQdNnJ-mg",
+  authDomain: "hw2-cse134b-3ffd9.firebaseapp.com",
+  databaseURL: "https://hw2-cse134b-3ffd9.firebaseio.com",
+  projectId: "hw2-cse134b-3ffd9",
+  storageBucket: "hw2-cse134b-3ffd9.appspot.com",
+  messagingSenderId: "525755574970"
+};
+firebase.initializeApp(config);
+
 var db = firebase.firestore();
+var citiesRef = db.collection("cities");
+var registered_users = localStorage;
+
 
 
 // register the user
@@ -36,8 +48,6 @@ function register_user() {
           var errorCode = error.code;
           var errorMessage = error.message;
         });
-
-        var citiesRef = db.collection("cities");
 
         citiesRef.doc("SF").set({
            name: "San Francisco", state: "CA", country: "USA",
