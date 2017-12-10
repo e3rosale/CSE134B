@@ -1,9 +1,10 @@
 var registered_users = localStorage;
-var db = firebase.firestore();
-
 const firebase = require("firebase");
 // Required for side-effects
 require("firebase/firestore");
+var db = firebase.firestore();
+
+
 // register the user
 function register_user() {
   var user_first_name = document.querySelector('#Fname').value;
