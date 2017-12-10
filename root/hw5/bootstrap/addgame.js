@@ -31,32 +31,37 @@ if(gameToEdit !== null) {
 		gameToEdit.addEventListener('submit', editGameCurr, false);
 }
 
+//Getting values from form
+	var currOponent;
+	var currLocation;
+	var currDate;
+	var gameId;
+	var currStatus;
+	var currStatusValue;
 
-/* 
- * Function that saves a new game to the local storage
- */
-function saveGame(e) {
-	//Getting values from form
-	var currOponent = '';
-	var currLocation = '';
-	var currDate = '';
-	var gameId = '';
-	var currStatus = '';
-	var currStatusValue = '';
+	db.collection('games').doc('null').set({
+   		oponent: '',
+   		location: '',
+   		date: '',
+  		status: '',
+   		id: '',
+	});
 
 	db.collection('games').doc('null').delete().then(function() {
     	console.log('Document successfully deleted!');
 	}).catch(function(error) {
     	console.error('Error removing document: ', error);
 	});
-
+/* 
+ * Function that saves a new game to the local storage
+ */
+function saveGame(e) {
 
 	currOponent = document.getElementById('oponent').value;
 	currLocation = document.getElementById('location').value;
 	currDate = document.getElementById('date').value;
 	gameId = currOponent + '|' + currDate;
 	currStatus = document.getElementsByName('status');
-	currStatusValue;
 	for(let i=0; i < currStatus.length; i++) {
 		if(currStatus[i].checked) {
 			currStatusValue = currStatus[i].value;
