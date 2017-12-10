@@ -9,8 +9,6 @@ var config = {
 firebase.initializeApp(config);
 
 var db = firebase.firestore();
-//var citiesRef = db.collection("cities");
-var registered_users = localStorage;
 
 var user_first_name;
 var user_last_name;
@@ -35,21 +33,6 @@ db.collection("users").doc("null").delete().then(function() {
     console.error("Error removing document: ", error);
 });
 
-function userExist(database_email) {
-  alert(database_email);
-
-  db.collection("users").doc("joey@nfl.com").get()
-    .then((docSnapshot) => {
-      if (docSnapshot.exists) {
-        db.collection("user").doc("joey@nfl.com").onSnapshot((doc) => {
-        alert("user exist");
-        });
-      } else {
-        alert("user does not exist");
-      }
-  });
-}
-
 // register the user
 function register_user() {
   user_first_name = document.querySelector('#Fname').value;
@@ -65,12 +48,21 @@ function register_user() {
   } else {
     // check to see if user email is already registered
     var email_exists = false;
-    for (users in registered_users) {
-      if (users == user_email) {
-        email_exists = true;
-        break;
-      }
-    }
+    console.log("The current user email is: ");
+    console.log(user_email);
+    db.collection("users").get().then(function(querySnapshot) {
+  		querySnapshot.forEach(function(doc) {
+  			if (doc.data().email == user_email) {
+          console.log("The doc data email is: ");
+          console.log(doc.data().email);
+          console.log("The value of email exists is: (inside for loop)");
+          email_exists = true;
+          console.log(email_exists);
+        }
+  		});
+  	});
+    console.log("The value of email_exists is: ");
+    console.log(email_exists);
     if (email_exists) {
       alert("Email already exists. Please try logging in.");
     } else {
@@ -91,22 +83,11 @@ function register_user() {
            password: user_password,
            type: user_type,
            phone: user_phone_number
-         });
-        userExist(user_email);
-        var new_user = {first_name : user_first_name, last_name : user_last_name, email : user_email, password : user_password, type : user_type, phone : user_phone_number};
-        registered_users.setItem(new_user.email, JSON.stringify(new_user));
+        });
         alert("registration successful! Please login");
-        window.location.replace("https://hw2-cse134b-3ffd9.firebaseapp.com/hw5/bootstrap/loginBootstrap.html");
+        //window.location.replace("https://hw2-cse134b-3ffd9.firebaseapp.com/hw5/bootstrap/loginBootstrap.html");
       }
     }
-  }
-}
-
-function displayStorageContent() {
-  for (users in registered_users) {
-    var retrievedObject = registered_users.getItem(users);
-    var user = JSON.parse(retrievedObject);
-    alert("{first_name : " + user.first_name + ", " + "last_name : " + user.last_name + ", " + "email : " + user.email + ", " + "password : " + user.password + ", " + "type : " + user.type + "}");
   }
 }
 
