@@ -20,8 +20,6 @@ var user_confirm_password;
 var user_type;
 var user_phone_number;
 
-
-
 db.collection("users").doc("null").set({
    first_name: "",
    last_name: "",
@@ -37,7 +35,20 @@ db.collection("users").doc("null").delete().then(function() {
     console.error("Error removing document: ", error);
 });
 
+function userExist(database_email) {
+  alert(database_email);
 
+  db.collection("users").doc("joey@nfl.com").get()
+    .then((docSnapshot) => {
+      if (docSnapshot.exists) {
+        db.collection("user").doc("joey@nfl.com").onSnapshot((doc) => {
+        alert("user exist");
+        });
+      } else {
+        alert("user does not exist");
+      }
+  });
+}
 
 // register the user
 function register_user() {
@@ -81,6 +92,7 @@ function register_user() {
            type: user_type,
            phone: user_phone_number
          });
+        userExist(user_email);
         var new_user = {first_name : user_first_name, last_name : user_last_name, email : user_email, password : user_password, type : user_type, phone : user_phone_number};
         registered_users.setItem(new_user.email, JSON.stringify(new_user));
         alert("registration successful! Please login");
