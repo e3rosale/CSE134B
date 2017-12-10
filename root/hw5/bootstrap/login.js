@@ -1,7 +1,4 @@
 var registered_users = localStorage;
-const firebase = require("firebase");
-// Required for side-effects
-require("firebase/firestore");
 var db = firebase.firestore();
 
 function login_user() {
