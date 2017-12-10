@@ -2,13 +2,26 @@
  * JavaScript to add game to local storage
  */
 
+ var config = {
+  apiKey: "AIzaSyBHPFZ_lh_iNcTNJSgZlbEku1DQdNnJ-mg",
+  authDomain: "hw2-cse134b-3ffd9.firebaseapp.com",
+  databaseURL: "https://hw2-cse134b-3ffd9.firebaseio.com",
+  projectId: "hw2-cse134b-3ffd9",
+  storageBucket: "hw2-cse134b-3ffd9.appspot.com",
+  messagingSenderId: "525755574970"
+};
+firebase.initializeApp(config);
+
+var db = firebase.firestore();
+
 
 // Global variables to get forms from new and updated games
 var gameToAdd = document.getElementById('gameForm');
 var gameToEdit = document.getElementById('editGameForm');
 var editThisGame = {};
-homeBoolean = false;
-awayBoolean = false;
+var homeBoolean = false;
+var awayBoolean = false;
+// var db;
 
 if(gameToAdd !== null) {
 	gameToAdd.addEventListener('submit', saveGame, false);
@@ -18,42 +31,57 @@ if(gameToEdit !== null) {
 		gameToEdit.addEventListener('submit', editGameCurr, false);
 }
 
+//Getting values from form
+	var currOponent;
+	var currLocation;
+	var currDate;
+	var gameId;
+	var currStatus;
+	var currStatusValue;
 
+	db.collection('games').doc('null').set({
+   		oponent: '',
+   		location: '',
+   		date: '',
+  		status: '',
+   		id: '',
+	});
+
+	db.collection('games').doc('null').delete().then(function() {
+    	console.log('Document successfully deleted!');
+	}).catch(function(error) {
+    	console.error('Error removing document: ', error);
+	});
 /* 
  * Function that saves a new game to the local storage
  */
 function saveGame(e) {
-	//Getting values from form
-	var currOponent = document.getElementById('oponent').value;
-	var currLocation = document.getElementById('location').value;
-	var currDate = document.getElementById('date').value;
-	var gameId = currOponent + '|' + currDate;
-	var currStatus = document.getElementsByName('status');
-	var currStatusValue;
+
+	currOponent = document.getElementById('oponent').value;
+	currLocation = document.getElementById('location').value;
+	currDate = document.getElementById('date').value;
+	gameId = currOponent + '|' + currDate;
+	currStatus = document.getElementsByName('status');
 	for(let i=0; i < currStatus.length; i++) {
 		if(currStatus[i].checked) {
 			currStatusValue = currStatus[i].value;
 		}
 	}
 
-	//Creating object to store in local storage
-	var game = { oponent: currOponent,
-				 location: currLocation,
-				 date: currDate,
-				 status: currStatusValue, 
-				 id: gameId 
-				};
-
-	//Storing in local storage
-	if(localStorage.getItem('schedule') === null) {
-		var schedule = [];
-		schedule.push(game);
-		localStorage.setItem('schedule', JSON.stringify(schedule));
-	} else {
-		var schedule = JSON.parse(localStorage.getItem('schedule'));
-		schedule.push(game);
-		localStorage.setItem('schedule', JSON.stringify(schedule));
-	}
+	//Creating object to store in database
+	db.collection('games').doc(gameId).set({
+		oponent: currOponent,
+		location: currLocation,
+		date: currDate,
+		status: currStatusValue, 
+		id: gameId 
+	})
+	.then(function() {
+		console.log('Success');
+	})
+	.catch(function(error) {
+		console.error(error);
+	});
 
 	//reseting form
 	gameToAdd.reset();
@@ -201,6 +229,10 @@ function editGameCurr(e) {
 	e.preventDefault();
 	window.location.href = './scheduleBootstrap.html';
 }
+
+// function setDB(app) {
+// 	db = app;
+// }
 
 
 
