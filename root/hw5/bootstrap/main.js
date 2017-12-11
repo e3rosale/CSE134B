@@ -18,13 +18,12 @@ if(playerForm != null){
   playerForm.addEventListener('submit', savePlayer, false);
 }
 
-/*
+
 var playerToEdit = document.getElementById('editPlayerForm');
 if (playerToEdit != null) {
 	playerToEdit.addEventListener('submit', editPlayerCurr, false);
 }
 
-*/
 
 editThisPlayer = {};
 captainBoolean = false;
@@ -57,9 +56,7 @@ function savePlayer(e) {
   var playerCaptain = (document.getElementById('playerCaptain').checked) ? true : false;
   var playerId = playerFirstName + "|" + playerLastName + "|" + playerNumber;
 
-  console.log(playerFirstName);
-  console.log(playerLastName);
-  console.log(playerEmail);
+
 
   // store in firestore //
   db.collection("players").doc(playerId).set({
@@ -83,7 +80,7 @@ function savePlayer(e) {
  * 	fetches all the players and their data to the roster page
  */
 function fetchRoster() {
-	console.log("in fetch");
+	
 	var rosterList = document.getElementById('rosterList');
 	rosterList.innerHTML = '';
 
@@ -96,18 +93,13 @@ function fetchRoster() {
 				var age = getAge(doc.data().dob);
 				var position = doc.data().position;
 
-				console.log(number);
-				console.log(name);
-				console.log(email);
-				console.log(age);
-				console.log(position);
 
 				rosterList.innerHTML += '<tr> <th scope="row">' + number + '</th>' +
 										'<td>' + name + '</td>' +
 										'<td>' + email.substring(0, email.indexOf('@')) + '<br>' + email.substring(email.indexOf('@'), email.length) + '</td>' +
 										'<td>' + age + '</td>' +
 										'<td>' + position + '</td>' +
-										'<td><a href="editplayerBootstrap.html" type="button" onclick="populatePlayerEdit(\''+ doc.data().id +'\')"><span class="glyphicon glyphicon-pencil"></span></a></td>' +
+										'<td><a href="editPlayerBootstrap.html" type="button" onclick="editPlayer(\''+ doc.data().id +'\')"><span class="glyphicon glyphicon-pencil"></span></a></td>' +
 				  						'<td><input type="checkbox" name="players" id="\''+ doc.data().id +'\'"></td>' +
 										'</tr>';
 
@@ -140,8 +132,7 @@ function deletePlayers() {
  */
 function deletePlayerByKey(id) {
 //	var roster = JSON.parse(localStorage.getItem('roster'));
-	console.log("in deletePlayerBykey and param: ");
-	console.log(id);
+
 
 	db.collection("players").get().then(function(querySnapshot) {
 		querySnapshot.forEach(function(doc) {
@@ -150,10 +141,8 @@ function deletePlayerByKey(id) {
 				var str = id.substring(1, id.length - 1);
 				
 				if (doc.data().id == str) {
-					console.log(str);
-					console.log(doc.data().id);
 					db.collection("players").doc(str).delete().then(function() {
-					console.log("Document successfully deleted3!");
+				
 				}).catch(function(error) {
 					console.error("Error removing document: ", error);
 				});
@@ -171,78 +160,37 @@ function deletePlayerByKey(id) {
  * 	Finds and saves player to be edited to local storage
  */
 
- /*
+ 
 function editPlayer(id) {	
-	var roster = JSON.parse(localStorage.getItem('roster'));
-	for (let i = 0; i < roster.length; i++) {
-		if (roster[i].id === id) {
-			localStorage.setItem('editPlayer', JSON.stringify(roster[i]));
-			break;
-		}
-	}
-}*/
+	localStorage.setItem('editPlayerId', id);
+}
 
 
 /* 
  * 	Populates the edit page with the data of player selected
  */
 function populatePlayerEdit(id) {
-	//editThisPlayer = JSON.parse(localStorage.getItem('editPlayer'));	
-	console.log("in populate player");
-	console.log(id);
 
-	console.log("hello");
-
+	var docRef = db.collection("players").doc(localStorage.getItem('editPlayerId'));	
 	
-	db.collection("players").get().then(function(querySnapshot) {
-		querySnapshot.forEach(function(doc) {
-			console.log("in loop");
-			console.log(doc.data().id)
-			if (doc.data().id == id) {
+	docRef.get().then(function(doc) {
+		if (doc.exists) {
+			console.log("doc data: ", doc.data());
+			document.getElementById('playerFNameEdit').value = doc.data().firstName;
+			document.getElementById('playerLNameEdit').value = doc.data().lastName;
+			document.getElementById('playerEmailEdit').value = doc.data().email;
+			document.getElementById('playerDobEdit').value = doc.data().dob;
+			document.getElementById('playerJerseyEdit').value = doc.data().number;
+			document.getElementById('playerPositionEdit').value = doc.data().position;
 
-				console.log("Shit");
-				var number = doc.data().number;
-				var name = doc.data().firstName + ' ' + doc.data().lastName;
-				var email = doc.data().email;
-				var age = getAge(doc.data().dob);
-				var position = doc.data().position;
+		}
 
-				console.log(number);
-				console.log(name);
-				console.log(email);
-				console.log(age);
-				console.log(position);
-
-
-			}
-		});
-	}); 
-	
-
-
-		
-
-
-	
-
-
-
-	
-	/*
-
-	document.getElementById('playerFNameEdit').value = editThisPlayer.firstName;
-	document.getElementById('playerLNameEdit').value = editThisPlayer.lastName;
-	document.getElementById('playerEmailEdit').value = editThisPlayer.email;
-	document.getElementById('playerDobEdit').value = editThisPlayer.dob;
-	document.getElementById('playerJerseyEdit').value = editThisPlayer.number;
-	document.getElementById('playerPositionEdit').value = editThisPlayer.position;
-
-	if(editThisPlayer.captain) {
-		captainBoolean = true;
-	} else {
-		captainBoolean = false;
-	}
-	*/
+		else {
+			console.log("None");
+		}
+	}).catch(function(error) {
+		console.log(error);
+	});	
 }
 
 
@@ -250,7 +198,7 @@ function populatePlayerEdit(id) {
  * 	Edits the player selected and replaces old data with new data. Then it saves to local storage
  */
 
- /*
+ 
 function editPlayerCurr(e) {
 	//Getting values from form
 	var playerFirstName = document.getElementById('playerFNameEdit').value;
@@ -262,31 +210,36 @@ function editPlayerCurr(e) {
   	var playerCaptain = (document.getElementById('playerCaptainEdit').checked) ? true : false;
   	var playerId = playerFirstName + "|" + playerLastName + "|" + playerNumber;
 
-	// Updating current entry
-	var currPlayerId = editThisPlayer.id;
-	var roster = JSON.parse(localStorage.getItem('roster'));
-	for (let i = 0; i < roster.length; i++) {
-		if (roster[i].id === currPlayerId) {
-			roster[i].firstName = playerFirstName;
-			roster[i].lastName = playerLastName;
-			roster[i].email = playerEmail;
-			roster[i].dob = playerDOB;
-			roster[i].number = playerNumber;
-			roster[i].position = playerPosition;
-			roster[i].captain = playerCaptain;
-			roster[i].id = playerId;
-			break;
-		}
-	}
 	
-	localStorage.setItem('roster', JSON.stringify(roster));  
+	var player = {
+		firstName: playerFirstName,
+		lastName: playerLastName,
+		email: playerEmail,
+		dob: playerDOB,
+		number: playerNumber,
+		position: playerPosition,
+		captain: playerCaptain,
+		id: playerId
+	};
+	  // store in firestore //
+	db.collection("players").doc(playerId).set(player).then(function() {
+		console.log('Success');
+	}).catch(function(error) {
+		console.log(error);
+	});
 
-	//reseting form
+	//deleting object
+	db.collection('players').doc(localStorage.getItem('editPlayerId')).delete().then(function() {
+    	console.log('Document successfully deleted!');
+	}).catch(function(error) {
+    	console.error('Error removing document: ', error);
+	});
+	
 	playerToEdit.reset();
 	e.preventDefault();
 	window.location.href = './rosterBootstrap.html';
 }
-*/
+
 
 /* 
  * 	Calculates the age of a player according to theri Date of Birth
