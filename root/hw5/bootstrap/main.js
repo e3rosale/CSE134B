@@ -99,7 +99,7 @@ function fetchRoster() {
 										'<td>' + email.substring(0, email.indexOf('@')) + '<br>' + email.substring(email.indexOf('@'), email.length) + '</td>' +
 										'<td>' + age + '</td>' +
 										'<td>' + position + '</td>' +
-										'<td><a href="editPlayerBootstrap.html" type="button" onclick="editPlayer(\''+ doc.data().id +'\')"><span class="glyphicon glyphicon-pencil"></span></a></td>' +
+										'<td><a href="editplayerBootstrap.html" type="button" onclick="editPlayer(\''+ doc.data().id +'\')"><span class="glyphicon glyphicon-pencil"></span></a></td>' +
 				  						'<td><input type="checkbox" name="players" id="\''+ doc.data().id +'\'"></td>' +
 										'</tr>';
 
