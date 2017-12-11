@@ -50,17 +50,17 @@ function register_user() {
     var email_exists = false;
     console.log("The current user email is: ");
     console.log(user_email);
-    db.collection("users").get().then(function(querySnapshot) {
-  		querySnapshot.forEach(function(doc) {
-  			if (doc.data().email == user_email) {
-          console.log("The doc data email is: ");
-          console.log(doc.data().email);
-          console.log("The value of email exists is: (inside for loop)");
-          email_exists = true;
-          console.log(email_exists);
-        }
-  		});
-  	});
+    db.collection("users").doc(user_email).get().then(function(doc) {
+      if (doc.exists) {
+        console.log("Document data:", doc.data());
+        email_exists = true;
+      } else {
+        console.log("No such document!");
+      }
+    }).catch(function(error) {
+      console.log("Error getting document:", error);
+    });
+
     console.log("The value of email_exists is: ");
     console.log(email_exists);
     if (email_exists) {
