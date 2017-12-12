@@ -9,43 +9,30 @@ var config = {
 firebase.initializeApp(config);
 var db = firebase.firestore();
 
-var registered_users = localStorage;
-
 function login_user() {
   var login_email = document.querySelector('#Email').value;
   var login_password = document.querySelector('#Password').value;
   if (login_email == "" || login_password == "") {
     alert("complete all form fields");
   } else {
-    var email_registered = false;
-    var password_matched = false;
-    for (users in registered_users) {
-      if (users != "current_user") {
-        var retrieved_user_object = registered_users.getItem(users);
-        var user = JSON.parse(retrieved_user_object);
-        if (user.email == login_email) {
-          email_registered = true;
-          if(user.password == login_password)
-            password_matched = true;
-          break;
-        }
-      }
-    }
-    if (email_registered && password_matched) {
-      firebase.auth().signInWithEmailAndPassword(login_email, login_password).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-      });
-      registered_users.setItem("current_user", login_email);
-      // print out all of the contents from firestore
-
+    firebase.auth().signInWithEmailAndPassword(login_email, login_password).then(function(user) {
       window.location.replace("https://hw2-cse134b-3ffd9.firebaseapp.com/hw5/bootstrap/dashboardBootstrap.html");
-    } else if (email_registered && !password_matched) {
-      alert("password is incorrect");
-    } else {
-      alert("email does not exist, please register");
-    }
+    }).catch(function(error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+
+      console.log(errorMessage);
+
+      if (errorCode == 'auth/invalid-email') {
+        alert("This email address is invalid, please try using a different email");
+
+      } else if (errorCode == 'auth/user-not-found') {
+        alert("This email address does not exist. Please Register or try a different email address");
+
+      } else if (errorCode == 'auth/wrong-password') {
+        alert("Password is incorrect. Please try again.");
+      }
+    });
   }
 }
 
