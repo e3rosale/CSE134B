@@ -117,6 +117,8 @@ function fetchSchedule() {
 	scheduleTable.innerHTML = '';
 
 	gamesRef.orderBy("date").get()
+	db.collection("games").get()
+
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             var oponent = doc.data().oponent;
