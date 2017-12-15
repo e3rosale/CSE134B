@@ -2,6 +2,7 @@
  * JavaScript to add game to local storage
  */
 
+//Initializing DB
  var config = {
   apiKey: "AIzaSyBHPFZ_lh_iNcTNJSgZlbEku1DQdNnJ-mg",
   authDomain: "hw2-cse134b-3ffd9.firebaseapp.com",
@@ -11,9 +12,7 @@
   messagingSenderId: "525755574970"
 };
 firebase.initializeApp(config);
-
 var db = firebase.firestore();
-
 
 // Global variables to get forms from new and updated games
 var gameToAdd = document.getElementById('gameForm');
@@ -71,7 +70,6 @@ if(gameToEdit !== null) {
  * Function that saves a new game to the local storage
  */
 function saveGame(e) {
-
 	currOponent = document.getElementById('oponent').value;
 	currLocation = document.getElementById('location').value;
 	currDate = document.getElementById('date').value;

@@ -122,8 +122,7 @@ function deletePlayers() {
 			deletePlayerByKey(players[i].id);	
 		}
 	} 
-
-	
+	setTimeout( function(){fetchRoster();} , 1000 );	
 }
 
 
