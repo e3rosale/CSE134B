@@ -2,6 +2,7 @@
  * JavaScript to add game to local storage
  */
 
+//Initializing DB
  var config = {
   apiKey: "AIzaSyBHPFZ_lh_iNcTNJSgZlbEku1DQdNnJ-mg",
   authDomain: "hw2-cse134b-3ffd9.firebaseapp.com",
@@ -11,9 +12,29 @@
   messagingSenderId: "525755574970"
 };
 firebase.initializeApp(config);
-
 var db = firebase.firestore();
 
+//Getting curr user
+// firebase.auth().onAuthStateChanged(function(user) {
+// 	if(user) {
+// 		user.provideData.forEach(function(profile) {
+// 			console.log('sign in: ' + profile.providerId);
+// 			console.log('specific UID: ' + profile.uid);
+// 			console.log('Name: ' + profile.displayName);
+// 			console.log('Email: ' + profile.email);
+// 		});
+// 	} else {
+// 		console.log('no user found');
+// 	}
+// });
+
+// var user = firebase.auth().currentUser;
+// if (user) {
+//   console.log(user);
+// } else {
+//   console.log('no user found');
+// }
+// console.log('yo');
 
 // Global variables to get forms from new and updated games
 var gameToAdd = document.getElementById('gameForm');

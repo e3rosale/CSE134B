@@ -1,0 +1,14 @@
+{
+  "short_name": "TeamWatch",
+  "name": "Team Watch Application",
+  "icons": [
+    {
+      "src": "appLogo_main.gif",
+      "type": "image/png",
+      "sizes": "48x48"
+    }
+  ],
+  "start_url": "login.html?launcher=true",
+  "background_color": "#2196F3",
+  "display": "standalone"
+}
