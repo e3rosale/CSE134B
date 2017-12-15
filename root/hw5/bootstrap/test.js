@@ -1,2 +1,2 @@
 
-export default const PI = 3.14;
+export const pi = 3.14;
